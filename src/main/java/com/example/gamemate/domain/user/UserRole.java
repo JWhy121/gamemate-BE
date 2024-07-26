@@ -1,4 +1,4 @@
-package com.example.gamemate.user;
+package com.example.gamemate.domain.user;
 
 public enum UserRole {
     USER, ADMIN;

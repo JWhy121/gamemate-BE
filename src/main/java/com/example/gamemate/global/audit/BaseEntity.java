@@ -1,4 +1,4 @@
-package com.example.gamemate.audit;
+package com.example.gamemate.global.audit;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.Column;

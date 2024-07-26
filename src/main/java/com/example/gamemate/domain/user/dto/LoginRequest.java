@@ -1,4 +1,4 @@
-package com.example.gamemate.user.dto;
+package com.example.gamemate.domain.user.dto;
 
 import lombok.Getter;
 import lombok.NoArgsConstructor;
