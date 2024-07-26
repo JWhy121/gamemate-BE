@@ -33,6 +33,11 @@ dependencies {
 	testImplementation 'org.springframework.security:spring-security-test'
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 
+	//웹소캣
+	implementation 'org.springframework.boot:spring-boot-starter-websocket'
+
+
+
 	//security setting
 	//	implementation 'org.springframework.boot:spring-boot-starter-security'
 
