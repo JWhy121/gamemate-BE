@@ -1,5 +1,6 @@
-package com.example.gamemate.domain.postcomment;
+package com.example.gamemate.domain.post;
 
+import com.example.gamemate.domain.post.Post;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
@@ -16,8 +17,12 @@ public class PostComment {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(nullable = false)
-    private Long postId;
+//    @Column(nullable = false)
+//    private Long postId;
+
+    @ManyToOne
+    @JoinColumn(name = "post_id", nullable = false)
+    private Post post;
 
     private Long pCommentId;
 
@@ -32,4 +37,5 @@ public class PostComment {
 
     @Column(nullable = false)
     private LocalDateTime updatedDate;
+
 }

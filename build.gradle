@@ -38,6 +38,17 @@ dependencies {
 
 	//database setting
 	runtimeOnly 'com.mysql:mysql-connector-j'
+
+	//swagger setting
+	implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.2.0'
+
+	//mapper setting
+	implementation("org.projectlombok:lombok-mapstruct-binding:0.2.0")
+	implementation 'org.mapstruct:mapstruct:1.5.5.Final'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.5.Final'
+
+	//Devtools setting
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
 }
 
 tasks.named('test') {

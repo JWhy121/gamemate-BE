@@ -7,6 +7,9 @@ import lombok.Setter;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
 @Setter
 @Getter
 @Table(name = "post")
@@ -40,7 +43,10 @@ public class Post extends BaseEntity {
     private Integer commentCnt;
 
     @Column(length = 30)
-    private String mateRegion;
+    private String mateRegionSi;
+
+    @Column(length = 30)
+    private String mateRegionGu;
 
     @Column(nullable = false)
     private BigDecimal latitude;
@@ -58,4 +64,7 @@ public class Post extends BaseEntity {
     public enum OnOffStatus {
         ON, OFF
     }
+
+    @OneToMany(mappedBy = "post", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    private List<PostComment> postComments = new ArrayList<>();
 }
