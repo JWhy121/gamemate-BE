@@ -1,4 +1,4 @@
-package com.example.gamemate.game.entity;
+package com.example.gamemate.game;
 
 import jakarta.persistence.*;
 import lombok.*;

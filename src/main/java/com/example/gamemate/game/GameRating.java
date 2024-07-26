@@ -1,8 +1,7 @@
-package com.example.gamemate.game.entity;
-
+package com.example.gamemate.game;
+import com.example.gamemate.user.User;
 import jakarta.persistence.*;
 
-import java.time.LocalDateTime;
 import jakarta.persistence.Entity;
 import lombok.*;
 

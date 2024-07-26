@@ -1,9 +1,8 @@
-package com.example.gamemate.game.entity;
+package com.example.gamemate.game;
 
+import com.example.gamemate.user.User;
 import jakarta.persistence.*;
 import lombok.*;
-
-import java.time.LocalDateTime;
 
 @Table(name = "game_comment")
 @NoArgsConstructor
