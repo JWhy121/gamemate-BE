@@ -18,8 +18,9 @@ import java.util.StringTokenizer;
 public class Post extends BaseEntity {
 
     @Builder
-    public Post(Long userId, OnOffStatus status, String gameTitle, String gameGenre, Integer mateCnt, String mateContent,
+    public Post(Long id, Long userId, OnOffStatus status, String gameTitle, String gameGenre, Integer mateCnt, String mateContent,
                 String mateRegionSi, String mateRegionGu, BigDecimal latitude, BigDecimal longitude) {
+        this.id = id;
         this.userId = userId;
         this.status = status;
         this.gameTitle = gameTitle;
@@ -75,5 +76,9 @@ public class Post extends BaseEntity {
         OFF  // 오프라인
     }
 
+    public void updatePost(Integer mateCnt, String mateContent){
+        this.mateCnt = mateCnt;
+        this.mateContent = mateContent;
+    }
 
 }

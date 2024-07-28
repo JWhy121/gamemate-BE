@@ -25,18 +25,21 @@ public class PostService {
         this.mapper = mapper;
     }
 
+    //온라인 게시글 리스트 조회
     public Page<OnlinePostResponse> readPostsOnline(Pageable pageable){
         Page<Post> postPage = postRepository.findByStatus(Post.OnOffStatus.ON, pageable);
 
         return postPage.map(OnlinePostResponse::new);
     }
 
+    //오프라인 게시글 리스트 조회
     public Page<OfflinePostResponse> readPostsOffline(Pageable pageable){
         Page<Post> postPage = postRepository.findByStatus(Post.OnOffStatus.OFF, pageable);
 
         return postPage.map(OfflinePostResponse::new);
     }
 
+    //게시글 조회
     public OfflinePostResponse readPost(Long id){
         return postRepository.findById(id)
                 .map(OfflinePostResponse::new)
@@ -44,6 +47,7 @@ public class PostService {
     }
 
 
+    //게시글 생성
     //Status 값에 따라서 다른 로직 처리
     public Post createPost(PostRequest postRequest) {
 
@@ -54,6 +58,20 @@ public class PostService {
         } else {
             throw new IllegalArgumentException("유효하지 않은 상태입니다.");
         }
+    }
+
+    public OfflinePostResponse updatePost(Long id, PostRequest postRequest){
+
+        if (postRequest.getStatus().equals("ON")){
+            return postRepository.findById(id)
+                    .map(existingPost -> {
+                        existingPost.updatePost(postRequest.getMateCnt(), postRequest.getMateContent());
+
+                        Post updatedPost = postRepository.save(existingPost);
+                        return mapper.PostToOfflinePostResponse(updatedPost);
+                    })
+                    .orElseThrow(() -> new IllegalStateException("Post with id " + id + "does note exist"));
+        }else throw new IllegalArgumentException("잘못된 접근");
     }
 
     // 온라인 포스트 처리 로직

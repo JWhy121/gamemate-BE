@@ -69,10 +69,13 @@ public class PostController {
     }
 
     //글 수정 api
-//    @PutMapping("/{id}")
-//    public ResponseEntity<Object> editPost(@Valid @PathVariable Long id){
-//
-//    }
+    @PutMapping("/post/{id}")
+    public ResponseEntity<Object> editPost(@Valid @PathVariable Long id, @RequestBody PostRequest postRequest){
+
+        postService.updatePost(id, postRequest);
+
+        return ResponseEntity.ok().build();
+    }
 
 
 }
