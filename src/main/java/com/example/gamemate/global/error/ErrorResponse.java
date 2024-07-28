@@ -20,6 +20,8 @@ public class ErrorResponse {
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private final List<ValidationError> errors;
 
+
+    //Valid 어노테이션을 사용했을 때 발생하는 에러 응답을 위한 클래스
     @Getter
     @Builder
     @RequiredArgsConstructor

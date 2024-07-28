@@ -1,27 +1,36 @@
 package com.example.gamemate.domain.post.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import com.fasterxml.jackson.annotation.JsonTypeInfo;
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
-import jakarta.validation.constraints.Pattern;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
+@JsonTypeInfo(
+        use = JsonTypeInfo.Id.NAME,
+        include = JsonTypeInfo.As.PROPERTY,
+        property = "status") // status 필드를 타입 구분자로 사용
+@JsonSubTypes({
+        @JsonSubTypes.Type(value = OnlinePostRequest.class, name = "ON"),
+        @JsonSubTypes.Type(value = OfflinePostRequest.class, name = "OFF")
+})
 @Getter
-public class PostRequest {
+public abstract class PostRequest {
 
     @NotNull
-    @Pattern(regexp = "on|off", message = "온오프라인을 선택해주세요.")
-    private String onOff;
-
-    @NotNull
-    @Size(max = 100, message = "게임 제목은 100자 이하이어야 합니다.")
     private String gameTitle;
+
+    @JsonProperty("status")
+    @NotNull
+    private String status;
 
     @NotNull
     private Long userId;
 
     @NotNull
-    @Size(max = 50, message = "게임 장르는 50자 이하이어야 합니다.")
     private String gameGenre;
 
     @NotNull
@@ -32,11 +41,7 @@ public class PostRequest {
     @Size(max = 500, message = "내용은 500자 이하여야 합니다.")
     private String mateContent;
 
-    private String mateRegionSi;
-
-    private String mateRegionGu;
-
-    private Double latitude;
-
-    private Double longitude;
+    protected void setStatus(String status) {
+        this.status = status;
+    }
 }

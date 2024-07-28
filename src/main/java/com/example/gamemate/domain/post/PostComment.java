@@ -1,24 +1,19 @@
 package com.example.gamemate.domain.post;
 
-import com.example.gamemate.domain.post.Post;
+import com.example.gamemate.global.utils.BaseEntity;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.Setter;
-
-import java.time.LocalDateTime;
 
 @Setter
 @Getter
 @Table(name = "post_comment")
 @Entity
-public class PostComment {
+public class PostComment extends BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
-//    @Column(nullable = false)
-//    private Long postId;
 
     @ManyToOne
     @JoinColumn(name = "post_id", nullable = false)
@@ -31,11 +26,4 @@ public class PostComment {
 
     @Column(nullable = false)
     private String content;
-
-    @Column(nullable = false)
-    private LocalDateTime createdDate;
-
-    @Column(nullable = false)
-    private LocalDateTime updatedDate;
-
 }

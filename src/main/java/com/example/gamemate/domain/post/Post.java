@@ -5,10 +5,8 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
 import java.util.List;
-import java.util.SimpleTimeZone;
+import java.util.StringTokenizer;
 
 
 //setter 어노테이션 허용 시 어디서는 객체의 변경이 가능하기 때문에 사용 지양하기
@@ -20,13 +18,18 @@ import java.util.SimpleTimeZone;
 public class Post extends BaseEntity {
 
     @Builder
-    public Post(Long userId, OnOffStatus onOff, String gameTitle, String gameGenre, Integer mateCnt, String mateContent) {
+    public Post(Long userId, OnOffStatus status, String gameTitle, String gameGenre, Integer mateCnt, String mateContent,
+                String mateRegionSi, String mateRegionGu, BigDecimal latitude, BigDecimal longitude) {
         this.userId = userId;
-        this.onOff = onOff;
+        this.status = status;
         this.gameTitle = gameTitle;
         this.gameGenre = gameGenre;
         this.mateCnt = mateCnt;
         this.mateContent = mateContent;
+        this.mateRegionSi = mateRegionSi;
+        this.mateRegionGu = mateRegionGu;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     @Id
@@ -36,9 +39,9 @@ public class Post extends BaseEntity {
     @Column(nullable = false)
     private Long userId;
 
-    @Enumerated(EnumType.STRING)
+    @Enumerated(EnumType.STRING) // Enum을 문자열로 저장
     @Column(nullable = false)
-    private OnOffStatus onOff;
+    private OnOffStatus status;
 
     @Column(length = 100)
     private String gameTitle;
@@ -64,13 +67,13 @@ public class Post extends BaseEntity {
     @Column
     private BigDecimal longitude;
 
-    // Enum for On/Off status
-    public enum OnOffStatus {
-        ON, OFF
-    }
-
     @OneToMany(mappedBy = "post", cascade = CascadeType.REMOVE, orphanRemoval = true)
     private List<PostComment> postComments;
+
+    public enum OnOffStatus {
+        ON,  // 온라인
+        OFF  // 오프라인
+    }
 
 
 }

@@ -1,10 +1,10 @@
 package com.example.gamemate.global.error;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatusCode;
-import org.springframework.http.ResponseEntity;
+import org.springframework.http.*;
+import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.BindException;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -32,6 +32,7 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         return handleExceptionInternal(errorCode, e.getMessage());
     }
 
+    //@Valid 어노테이션을 사용한 유효성 검사에 실패했을 때 발생하는 예외 처리
     @Override
     public ResponseEntity<Object> handleMethodArgumentNotValid(
             MethodArgumentNotValidException e,
@@ -42,6 +43,17 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
         ErrorCode errorCode = CommonErrorCode.INVALID_PARAMETER;
         return handleExceptionInternal(e, errorCode);
     }
+
+    //
+//    @Override
+//    protected ResponseEntity<Object> handleHttpMessageNotReadable(
+//            HttpMessageNotReadableException ex,
+//            HttpHeaders headers,
+//            HttpStatusCode status,
+//            WebRequest request) {
+//        ErrorCode errorCode = CommonErrorCode.RESOURCE_NOT_FOUND;
+//        return handleExceptionInternal(errorCode);
+//    }
 
 
     @ExceptionHandler({Exception.class})
