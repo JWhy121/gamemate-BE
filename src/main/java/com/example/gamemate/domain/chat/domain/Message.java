@@ -15,23 +15,22 @@ public class Message {
 
     private String content;
 
-//    @ManyToOne
-//    @JoinColumn(name = "chat_room")
-//    private ChatRoom chatRoom;
+    @ManyToOne
+    @JoinColumn(name = "chatroomId")
+    private ChatRoom chatRoom;
 
-    private String chatUuid;
-    // 음 이거를 쓰게 되니까 연관관계 매핑을 못하게 되버리네... 흠....
+
 
 //    @ManyToOne
 //    @JoinColumn(name = "writer")
 //    private ChatTestUser writer;
 
-    // 테스트용인 String 유저.
+    // 테스트용 유저.
     private String writer;
 
-    public Message(String content, String chatUuid, String writer) {
+    public Message(String content, ChatRoom chatRoom, String writer) {
         this.content = content;
-        this.chatUuid = chatUuid;
+        this.chatRoom = chatRoom;
         this.writer = writer;
     }
 }

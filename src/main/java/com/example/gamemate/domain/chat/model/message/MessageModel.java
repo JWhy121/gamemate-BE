@@ -8,11 +8,11 @@ import lombok.Setter;
 public class MessageModel {
     private String writer;
     private String content;
-    private String chatUuid;
+    private Long chatRoomId;
 
-    public MessageModel(String writer, String content, String chatUuid) {
+    public MessageModel(String writer, String content, Long chatRoomId) {
         this.writer = writer;
         this.content = content;
-        this.chatUuid = chatUuid;
+        this.chatRoomId = chatRoomId;
     }
 }

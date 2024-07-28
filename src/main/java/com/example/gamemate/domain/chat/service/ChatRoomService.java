@@ -1,7 +1,7 @@
 package com.example.gamemate.domain.chat.service;
 
 import com.example.gamemate.domain.chat.domain.ChatRoom;
-import com.example.gamemate.domain.chat.model.ChatRoomCreateResponse;
+import com.example.gamemate.domain.chat.model.chatroom.ChatRoomCreateResponse;
 import com.example.gamemate.domain.chat.repository.ChatRoomRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -13,13 +13,19 @@ import java.util.UUID;
 public class ChatRoomService {
 
     private final ChatRoomRepository chatRoomRepository;
+    private final ChatRoomMemberService chatRoomMemberService;
 
     public ChatRoomCreateResponse createChatRoom(String chatTitle, String leader){
 
-        String chatUuid = UUID.randomUUID().toString();
-        ChatRoom chatRoom = new ChatRoom(chatUuid, chatTitle, leader);
 
-        chatRoomRepository.save(chatRoom);
+
+        ChatRoom chatRoom = new ChatRoom(chatTitle, leader);
+
+        // 채팅방 생성
+        ChatRoom newChatRoom = chatRoomRepository.save(chatRoom);
+
+        // 생성요청을 보낸 유저를 채팅방멤버의 방장으로 추가함.
+        chatRoomMemberService.addMember(newChatRoom.getId(), leader, true);
 
         return ChatRoomCreateResponse.from(true, "채팅방을 생성하였습니다.");
     }

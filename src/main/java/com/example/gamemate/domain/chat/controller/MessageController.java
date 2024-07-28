@@ -29,14 +29,14 @@ public class MessageController {
 
     private final MessageService messageService;
 
-    @MessageMapping("/message/send/{chatUuid}") // "/app/message/send/"+chatUuid 클라이언트쪽에서 메시지를 보내오는 경로
-    @SendTo("/topic/chat/{chatUuid}") // 특정 목적지를 설정. 메시지브로커는 이 경로에 해당하는 응답채널을 통해서 구독자에게 메시지를 전달할 수 있게 된다.
-    public OutputMessageModel sendMessage(@Payload MessageModel messageModel, @DestinationVariable String chatUuid) { // chatUuid 이 경로로부터 데이터를 추출할 수 있음. 그러기 위해서 @DestinationVariable 사용
+    @MessageMapping("/message/send/{chatRoomId}") // "/app/message/send/"+chatUuid 클라이언트쪽에서 메시지를 보내오는 경로
+    @SendTo("/topic/chat/{chatRoomId}") // 특정 목적지를 설정. 메시지브로커는 이 경로에 해당하는 응답채널을 통해서 구독자에게 메시지를 전달할 수 있게 된다.
+    public OutputMessageModel sendMessage(@Payload MessageModel messageModel, @DestinationVariable String chatRoomId) { // chatUuid 이 경로로부터 데이터를 추출할 수 있음. 그러기 위해서 @DestinationVariable 사용
         final String time = new SimpleDateFormat("HH:mm").format(new Date());
 
-        messageService.saveMessage(messageModel.getChatUuid(),messageModel.getContent(),messageModel.getWriter());
+        messageService.saveMessage(messageModel.getChatRoomId(),messageModel.getContent(),messageModel.getWriter());
 
-        return new OutputMessageModel(messageModel.getWriter(), messageModel.getChatUuid(), messageModel.getContent(), time, OutputMessageModel.MessageType.CHAT);
+        return new OutputMessageModel(messageModel.getWriter(), messageModel.getChatRoomId(), messageModel.getContent(), time, OutputMessageModel.MessageType.CHAT);
 
     }
     // MessageMapping의 경로로 클라이언트가 메시지를 보내오면 sendframe에 담사어 전송함.

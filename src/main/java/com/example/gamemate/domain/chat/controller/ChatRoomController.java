@@ -1,8 +1,7 @@
 package com.example.gamemate.domain.chat.controller;
 
-import com.example.gamemate.domain.chat.domain.ChatRoom;
-import com.example.gamemate.domain.chat.model.ChatRoomCreateRequest;
-import com.example.gamemate.domain.chat.model.ChatRoomCreateResponse;
+import com.example.gamemate.domain.chat.model.chatroom.ChatRoomCreateRequest;
+import com.example.gamemate.domain.chat.model.chatroom.ChatRoomCreateResponse;
 import com.example.gamemate.domain.chat.service.ChatRoomService;
 
 import lombok.RequiredArgsConstructor;

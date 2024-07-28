@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 public class OutputMessageModel {
 
     private String writer;
-    private String chatUuid;
+    private Long chatRoomId;
     private String content;
     private String time;
     private MessageType type;
@@ -18,9 +18,9 @@ public class OutputMessageModel {
     }
 
 
-    public OutputMessageModel(String writer, String chatUuid, String content, String time, MessageType type) {
+    public OutputMessageModel(String writer, Long chatRoomId, String content, String time, MessageType type) {
         this.writer = writer;
-        this.chatUuid = chatUuid;
+        this.chatRoomId = chatRoomId;
         this.content = content;
         this.time = time;
         this.type = type;

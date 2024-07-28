@@ -14,22 +14,26 @@ public class ChatRoom {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private String chatUuid;
+
     private String title;
 
 
-    @OneToMany(mappedBy= "ChatRoom", cascade = CascadeType.ALL)
+
+    @OneToMany(mappedBy= "chatRoom", cascade = CascadeType.ALL)
     private List<Message> messageList = new ArrayList<>();
+
+    @OneToMany(mappedBy= "chatRoom", cascade = CascadeType.ALL)
+    private List<ChatRoomMember> memberList = new ArrayList<>();
 
 //    @ManyToOne
 //    @JoinColumn(name = "leader")
 //    private ChatTestUser leader;
 
-    // 테스트용에서는 유저를 스트링으로 받음.
+    // 테스트용 유저.
     private String leader;
 
-    public ChatRoom(String chatUuid, String title, String leader) {
-        this.chatUuid = chatUuid;
+    public ChatRoom(String title, String leader) {
+
         this.title = title;
         this.leader = leader;
     }
