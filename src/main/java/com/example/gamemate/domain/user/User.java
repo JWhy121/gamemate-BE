@@ -1,6 +1,6 @@
 package com.example.gamemate.domain.user;
 
-import com.example.gamemate.audit.BaseEntity;
+import com.example.gamemate.global.audit.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -11,7 +11,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import jakarta.validation.constraints.Email;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -21,7 +20,6 @@ import lombok.Setter;
 @AllArgsConstructor
 @Getter
 @Setter
-@Builder
 @Entity
 public class User extends BaseEntity {
 
@@ -40,8 +38,12 @@ public class User extends BaseEntity {
     private String nickname;
 
     @Enumerated(EnumType.STRING)
-    private UserRole role;
+    private RoleType role = RoleType.ROLE_USER;
 
-//    @Column(name = "deleted")
-//    private boolean deleted = false;
+    public enum RoleType {
+        ROLE_ADMIN, ROLE_USER
+    }
+
+    @Column(name = "deleted")
+    private boolean deleted = false;
 }
