@@ -1,5 +1,7 @@
 package com.example.gamemate.global.config;
 
+import com.example.gamemate.domain.user.jwt.JWTUtil;
+import com.example.gamemate.domain.user.jwt.filter.JWTFilter;
 import com.example.gamemate.domain.user.jwt.filter.LoginFilter;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -19,9 +21,13 @@ public class SecurityConfig {
     //AuthenticationManager가 인자로 받을 AuthenticationConfiguration 객체 생성자 주입
     private final AuthenticationConfiguration authenticationConfiguration;
 
-    public SecurityConfig(AuthenticationConfiguration authenticationConfiguration) {
+    //JWTUtil 주입
+    private final JWTUtil jwtUtil;
+
+    public SecurityConfig(AuthenticationConfiguration authenticationConfiguration, JWTUtil jwtUtil) {
 
         this.authenticationConfiguration = authenticationConfiguration;
+        this.jwtUtil = jwtUtil;
 
     }
 
@@ -35,7 +41,9 @@ public class SecurityConfig {
 
     @Bean
     public BCryptPasswordEncoder bCryptPasswordEncoder() {
+
         return new BCryptPasswordEncoder();
+
     }
 
     @Bean
@@ -55,11 +63,13 @@ public class SecurityConfig {
                 .requestMatchers("/login", "/", "/join").permitAll()
                 .anyRequest().authenticated())
 
+            //JWTFilter 등록
+            .addFilterBefore(new JWTFilter(jwtUtil), LoginFilter.class)
+
             //필터 추가
-            // LoginFilter()는 인자를 받음
-            // AuthenticationManager() 메소드에 authenticationConfiguration 객체를 넣어야 함
-            // 따라서 등록 필요
-            .addFilterAt(new LoginFilter(authenticationManager(authenticationConfiguration)), UsernamePasswordAuthenticationFilter.class)
+            //AuthenticationManager() 메소드에 authenticationConfiguration 객체를 넣어야 함
+            //AuthenticationManager()와 JWTUtil 인수 전달
+            .addFilterAt(new LoginFilter(authenticationManager(authenticationConfiguration), jwtUtil), UsernamePasswordAuthenticationFilter.class)
 
             //세션 설정
             //JWT를 통한 인증/인가를 위해 세션을 STATELESS 상태로 설정
