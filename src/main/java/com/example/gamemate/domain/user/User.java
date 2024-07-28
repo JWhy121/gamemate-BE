@@ -29,7 +29,7 @@ public class User extends BaseEntity {
 
     @Column(nullable = false, length = 50)
     @Email(message = "이메일 형식이 유효하지 않습니다.")
-    private String email;
+    private String username;
 
     @Column(nullable = false, length = 100)
     private String password;

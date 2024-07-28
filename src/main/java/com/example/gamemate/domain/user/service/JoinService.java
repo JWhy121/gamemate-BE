@@ -22,11 +22,11 @@ public class JoinService {
 
     public void joinProcess(JoinDTO joinDTO) {
 
-        String email = joinDTO.getEmail();
+        String username = joinDTO.getUsername();
         String password = joinDTO.getPassword();
         String nickname = joinDTO.getNickname();
 
-        Boolean isExist = userRepository.existsByEmail(email);
+        Boolean isExist = userRepository.existsByUsername(username);
 
         if(isExist) {
 
@@ -36,7 +36,7 @@ public class JoinService {
 
         User data = new User();
 
-        data.setEmail(email);
+        data.setUsername(username);
         data.setPassword(bCryptPasswordEncoder.encode(password));
         data.setNickname(nickname);
 
