@@ -1,5 +1,6 @@
-package com.example.gamemate.domain.friend;
+package com.example.gamemate.domain.friend.entity;
 
+import com.example.gamemate.domain.user.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -7,21 +8,20 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 @Entity
-@Table(name = "friendship")
+@Table(name = "friend")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
 @Setter
-public class Friendship {
+@IdClass(FriendId.class)
+public class Friend {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
-
     @ManyToOne
     @JoinColumn(name = "requester_id", nullable = false)
     private User requester;
 
+    @Id
     @ManyToOne
     @JoinColumn(name = "receiver_id", nullable = false)
     private User receiver;

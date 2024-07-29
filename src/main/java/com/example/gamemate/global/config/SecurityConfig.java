@@ -65,6 +65,7 @@ public class SecurityConfig {
             //경로별 인가 작업
             .authorizeHttpRequests((auth) -> auth
                 .requestMatchers("/login", "/", "/join").permitAll()
+                .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources/**", "/swagger-ui.html", "/webjars/**").permitAll() // Swagger 경로 허용
                 .anyRequest().authenticated())
 
             //JWTFilter 등록
