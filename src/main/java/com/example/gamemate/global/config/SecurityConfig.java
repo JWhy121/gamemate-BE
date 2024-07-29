@@ -8,6 +8,7 @@ import java.util.Collections;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -79,6 +80,9 @@ public class SecurityConfig {
             //JWT를 통한 인증/인가를 위해 세션을 STATELESS 상태로 설정
             .sessionManagement((session) -> session
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+
+            //oauth2
+            .oauth2Login(Customizer.withDefaults())
 
             //cors 설정
             .cors((cors -> cors.configurationSource(new CorsConfigurationSource() {
