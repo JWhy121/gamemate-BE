@@ -3,6 +3,8 @@ package com.example.gamemate.global.config;
 import com.example.gamemate.domain.user.jwt.JWTUtil;
 import com.example.gamemate.domain.user.jwt.filter.JWTFilter;
 import com.example.gamemate.domain.user.jwt.filter.LoginFilter;
+import jakarta.servlet.http.HttpServletRequest;
+import java.util.Collections;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -13,6 +15,8 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
+import org.springframework.web.cors.CorsConfiguration;
+import org.springframework.web.cors.CorsConfigurationSource;
 
 @Configuration
 @EnableWebSecurity
@@ -74,7 +78,26 @@ public class SecurityConfig {
             //세션 설정
             //JWT를 통한 인증/인가를 위해 세션을 STATELESS 상태로 설정
             .sessionManagement((session) -> session
-                .sessionCreationPolicy(SessionCreationPolicy.STATELESS));
+                .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+
+            //cors 설정
+            .cors((cors -> cors.configurationSource(new CorsConfigurationSource() {
+                @Override
+                public CorsConfiguration getCorsConfiguration(HttpServletRequest request) {
+
+                    CorsConfiguration configuration = new CorsConfiguration();
+
+                    configuration.setAllowedOrigins(Collections.singletonList("http://localhost:3000"));
+                    configuration.setAllowedMethods(Collections.singletonList("*"));
+                    configuration.setAllowCredentials(true);
+                    configuration.setAllowedHeaders(Collections.singletonList("*"));
+                    configuration.setMaxAge(3600L);
+
+                    configuration.setExposedHeaders(Collections.singletonList("Authorization"));
+
+                    return configuration;
+                }
+            })));
 
         return http.build();
 
