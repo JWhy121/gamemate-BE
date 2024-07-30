@@ -1,4 +1,4 @@
-package com.example.gamemate.global.error;
+package com.example.gamemate.global.exception;
 
 
 import lombok.Getter;
@@ -8,5 +8,5 @@ import lombok.RequiredArgsConstructor;
 @RequiredArgsConstructor
 public class RestApiException extends RuntimeException{
 
-    private final ErrorCode errorCode;
+    private final ExceptionCode exceptionCode;
 }

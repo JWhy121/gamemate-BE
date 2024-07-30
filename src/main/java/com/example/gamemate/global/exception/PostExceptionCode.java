@@ -1,4 +1,4 @@
-package com.example.gamemate.global.error;
+package com.example.gamemate.global.exception;
 
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
@@ -10,9 +10,10 @@ import org.springframework.http.HttpStatus;
  */
 @Getter
 @RequiredArgsConstructor
-public enum PostErrorCode implements ErrorCode {
+public enum PostExceptionCode implements ExceptionCode {
 
     POST_NOT_FOUND(HttpStatus.NOT_FOUND, "Post does not exist"),
+    COMMENT_NOT_FOUND(HttpStatus.NOT_FOUND, "ParentComment does not exist"),
     ;
 
     private final HttpStatus httpStatus;

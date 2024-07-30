@@ -1,4 +1,4 @@
-package com.example.gamemate.global.error;
+package com.example.gamemate.global.exception;
 
 
 import com.fasterxml.jackson.annotation.JsonInclude;
@@ -12,16 +12,17 @@ import java.util.List;
 @Getter
 @Builder
 @RequiredArgsConstructor
-public class ErrorResponse {
+public class ExceptionResponse {
 
     private final String code;
     private final String message;
 
+
+
+    //Valid 어노테이션을 사용했을 때 발생하는 에러 응답을 위한 필드와 클래스
     @JsonInclude(JsonInclude.Include.NON_EMPTY)
     private final List<ValidationError> errors;
 
-
-    //Valid 어노테이션을 사용했을 때 발생하는 에러 응답을 위한 클래스
     @Getter
     @Builder
     @RequiredArgsConstructor

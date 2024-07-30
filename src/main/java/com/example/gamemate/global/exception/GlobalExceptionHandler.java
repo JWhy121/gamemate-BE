@@ -1,10 +1,8 @@
-package com.example.gamemate.global.error;
+package com.example.gamemate.global.exception;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.*;
-import org.springframework.http.converter.HttpMessageNotReadableException;
 import org.springframework.validation.BindException;
-import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
@@ -19,17 +17,19 @@ import java.util.stream.Collectors;
 @RestControllerAdvice
 public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
 
+//예외처리 Custom하는 부분
     @ExceptionHandler(RestApiException.class)
     public ResponseEntity<Object> handleCustomException(RestApiException e) {
-        ErrorCode errorCode = e.getErrorCode();
-        return handleExceptionInternal(errorCode);
+        ExceptionCode exceptionCode = e.getExceptionCode();
+        return handleExceptionInternal(exceptionCode);
     }
 
+    //메소드에 전달된 인자가 유효하지 않을 때 발생하는 예외를 처리
     @ExceptionHandler(IllegalArgumentException.class)
     public ResponseEntity<Object> handleIllegalArgument(IllegalArgumentException e) {
         log.warn("handleIllegalArgument", e);
-        ErrorCode errorCode = CommonErrorCode.INVALID_PARAMETER;
-        return handleExceptionInternal(errorCode, e.getMessage());
+        ExceptionCode exceptionCode = CommonExceptionCode.INVALID_PARAMETER;
+        return handleExceptionInternal(exceptionCode, e.getMessage());
     }
 
     //@Valid 어노테이션을 사용한 유효성 검사에 실패했을 때 발생하는 예외 처리
@@ -40,8 +40,8 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
             HttpStatusCode status,
             WebRequest request) {
         log.warn("handleIllegalArgument", e);
-        ErrorCode errorCode = CommonErrorCode.INVALID_PARAMETER;
-        return handleExceptionInternal(e, errorCode);
+        ExceptionCode exceptionCode = CommonExceptionCode.INVALID_PARAMETER;
+        return handleExceptionInternal(e, exceptionCode);
     }
 
     //
@@ -59,49 +59,49 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     @ExceptionHandler({Exception.class})
     public ResponseEntity<Object> handleAllException(Exception ex) {
         log.warn("handleAllException", ex);
-        ErrorCode errorCode = CommonErrorCode.INTERNAL_SERVER_ERROR;
-        return handleExceptionInternal(errorCode);
+        ExceptionCode exceptionCode = CommonExceptionCode.INTERNAL_SERVER_ERROR;
+        return handleExceptionInternal(exceptionCode);
     }
 
-    private ResponseEntity<Object> handleExceptionInternal(ErrorCode errorCode) {
-        return ResponseEntity.status(errorCode.getHttpStatus())
-                .body(makeErrorResponse(errorCode));
+    private ResponseEntity<Object> handleExceptionInternal(ExceptionCode exceptionCode) {
+        return ResponseEntity.status(exceptionCode.getHttpStatus())
+                .body(makeErrorResponse(exceptionCode));
     }
 
-    private ErrorResponse makeErrorResponse(ErrorCode errorCode) {
-        return ErrorResponse.builder()
-                .code(errorCode.name())
-                .message(errorCode.getMessage())
+    private ExceptionResponse makeErrorResponse(ExceptionCode exceptionCode) {
+        return ExceptionResponse.builder()
+                .code(exceptionCode.name())
+                .message(exceptionCode.getMessage())
                 .build();
     }
 
-    private ResponseEntity<Object> handleExceptionInternal(ErrorCode errorCode, String message) {
-        return ResponseEntity.status(errorCode.getHttpStatus())
-                .body(makeErrorResponse(errorCode, message));
+    private ResponseEntity<Object> handleExceptionInternal(ExceptionCode exceptionCode, String message) {
+        return ResponseEntity.status(exceptionCode.getHttpStatus())
+                .body(makeErrorResponse(exceptionCode, message));
     }
 
-    private ErrorResponse makeErrorResponse(ErrorCode errorCode, String message) {
-        return ErrorResponse.builder()
-                .code(errorCode.name())
+    private ExceptionResponse makeErrorResponse(ExceptionCode exceptionCode, String message) {
+        return ExceptionResponse.builder()
+                .code(exceptionCode.name())
                 .message(message)
                 .build();
     }
 
-    private ResponseEntity<Object> handleExceptionInternal(BindException e, ErrorCode errorCode) {
-        return ResponseEntity.status(errorCode.getHttpStatus())
-                .body(makeErrorResponse(e, errorCode));
+    private ResponseEntity<Object> handleExceptionInternal(BindException e, ExceptionCode exceptionCode) {
+        return ResponseEntity.status(exceptionCode.getHttpStatus())
+                .body(makeErrorResponse(e, exceptionCode));
     }
 
-    private ErrorResponse makeErrorResponse(BindException e, ErrorCode errorCode) {
-        List<ErrorResponse.ValidationError> validationErrorList = e.getBindingResult()
+    private ExceptionResponse makeErrorResponse(BindException e, ExceptionCode exceptionCode) {
+        List<ExceptionResponse.ValidationError> validationErrorList = e.getBindingResult()
                 .getFieldErrors()
                 .stream()
-                .map(ErrorResponse.ValidationError::of)
+                .map(ExceptionResponse.ValidationError::of)
                 .collect(Collectors.toList());
 
-        return ErrorResponse.builder()
-                .code(errorCode.name())
-                .message(errorCode.getMessage())
+        return ExceptionResponse.builder()
+                .code(exceptionCode.name())
+                .message(exceptionCode.getMessage())
                 .errors(validationErrorList)
                 .build();
     }
