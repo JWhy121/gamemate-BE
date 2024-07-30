@@ -7,18 +7,17 @@ import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Size;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 
 @JsonTypeInfo(
         use = JsonTypeInfo.Id.NAME,
         include = JsonTypeInfo.As.PROPERTY,
         property = "status") // status 필드를 타입 구분자로 사용
 @JsonSubTypes({
-        @JsonSubTypes.Type(value = OnlinePostRequest.class, name = "ON"),
-        @JsonSubTypes.Type(value = OfflinePostRequest.class, name = "OFF")
+        @JsonSubTypes.Type(value = OnlinePostDTO.class, name = "ON"),
+        @JsonSubTypes.Type(value = OfflinePostDTO.class, name = "OFF")
 })
 @Getter
-public abstract class PostRequest {
+public abstract class PostDTO {
 
     @NotNull
     private String gameTitle;

@@ -1,12 +1,13 @@
-package com.example.gamemate.domain.post;
+package com.example.gamemate.domain.post.entity;
 
 import com.example.gamemate.global.utils.BaseEntity;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
-import java.util.StringTokenizer;
 
 
 //setter 어노테이션 허용 시 어디서는 객체의 변경이 가능하기 때문에 사용 지양하기
@@ -16,22 +17,6 @@ import java.util.StringTokenizer;
 @Table(name = "post")
 @Entity
 public class Post extends BaseEntity {
-
-    @Builder
-    public Post(Long id, Long userId, OnOffStatus status, String gameTitle, String gameGenre, Integer mateCnt, String mateContent,
-                String mateRegionSi, String mateRegionGu, BigDecimal latitude, BigDecimal longitude) {
-        this.id = id;
-        this.userId = userId;
-        this.status = status;
-        this.gameTitle = gameTitle;
-        this.gameGenre = gameGenre;
-        this.mateCnt = mateCnt;
-        this.mateContent = mateContent;
-        this.mateRegionSi = mateRegionSi;
-        this.mateRegionGu = mateRegionGu;
-        this.latitude = latitude;
-        this.longitude = longitude;
-    }
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -69,7 +54,7 @@ public class Post extends BaseEntity {
     private BigDecimal longitude;
 
     @OneToMany(mappedBy = "post", cascade = CascadeType.REMOVE, orphanRemoval = true)
-    private List<PostComment> postComments;
+    private List<PostComment> postComments = new ArrayList<>();
 
     public enum OnOffStatus {
         ON,  // 온라인
@@ -79,6 +64,21 @@ public class Post extends BaseEntity {
     public void updatePost(Integer mateCnt, String mateContent){
         this.mateCnt = mateCnt;
         this.mateContent = mateContent;
+    }
+
+    @Builder
+    public Post(Long userId, OnOffStatus status, String gameTitle, String gameGenre, Integer mateCnt, String mateContent,
+                String mateRegionSi, String mateRegionGu, BigDecimal latitude, BigDecimal longitude) {
+        this.userId = userId;
+        this.status = status;
+        this.gameTitle = gameTitle;
+        this.gameGenre = gameGenre;
+        this.mateCnt = mateCnt;
+        this.mateContent = mateContent;
+        this.mateRegionSi = mateRegionSi;
+        this.mateRegionGu = mateRegionGu;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
 }

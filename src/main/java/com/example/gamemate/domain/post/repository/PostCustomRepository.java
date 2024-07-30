@@ -1,7 +1,13 @@
 package com.example.gamemate.domain.post.repository;
 
 
+import com.example.gamemate.domain.post.entity.Post;
+
+import java.util.List;
+
 public interface PostCustomRepository {
+
+    List<Post> findBusanTest();
 
 
 }
