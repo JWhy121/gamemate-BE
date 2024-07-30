@@ -1,7 +1,7 @@
-package com.example.gamemate.domain.user.jwt.filter;
+package com.example.gamemate.domain.auth.jwt.filter;
 
-import com.example.gamemate.domain.user.dto.CustomUserDetails;
-import com.example.gamemate.domain.user.jwt.JWTUtil;
+import com.example.gamemate.domain.auth.dto.CustomUserDetailsDTO;
+import com.example.gamemate.domain.auth.jwt.JWTUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
@@ -48,7 +48,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
     protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response, FilterChain chain, Authentication authentication) {
 
         //UserDetails
-        CustomUserDetails customUserDetails = (CustomUserDetails) authentication.getPrincipal();
+        CustomUserDetailsDTO customUserDetails = (CustomUserDetailsDTO) authentication.getPrincipal();
 
         String username = customUserDetails.getUsername();
 

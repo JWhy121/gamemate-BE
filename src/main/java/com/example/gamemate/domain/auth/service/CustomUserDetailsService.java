@@ -1,7 +1,7 @@
-package com.example.gamemate.domain.user.service;
+package com.example.gamemate.domain.auth.service;
 
-import com.example.gamemate.domain.user.User;
-import com.example.gamemate.domain.user.dto.CustomUserDetails;
+import com.example.gamemate.domain.user.entity.User;
+import com.example.gamemate.domain.auth.dto.CustomUserDetailsDTO;
 import com.example.gamemate.domain.user.repository.UserRepository;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
@@ -28,7 +28,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         if(userData != null) {
 
             //UserDetails에 담아 return하면 AuthenticationManager가 검증
-            return new CustomUserDetails(userData);
+            return new CustomUserDetailsDTO(userData);
 
         }
 

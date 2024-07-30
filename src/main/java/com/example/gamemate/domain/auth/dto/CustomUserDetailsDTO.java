@@ -1,16 +1,16 @@
-package com.example.gamemate.domain.user.dto;
+package com.example.gamemate.domain.auth.dto;
 
-import com.example.gamemate.domain.user.User;
+import com.example.gamemate.domain.user.entity.User;
 import java.util.ArrayList;
 import java.util.Collection;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
-public class CustomUserDetails implements UserDetails {
+public class CustomUserDetailsDTO implements UserDetails {
 
     private final User user;
 
-    public CustomUserDetails(User user) {
+    public CustomUserDetailsDTO(User user) {
 
         this.user = user;
 

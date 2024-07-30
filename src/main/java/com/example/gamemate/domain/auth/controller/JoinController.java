@@ -1,7 +1,7 @@
-package com.example.gamemate.domain.user.controller;
+package com.example.gamemate.domain.auth.controller;
 
-import com.example.gamemate.domain.user.dto.JoinDTO;
-import com.example.gamemate.domain.user.service.JoinService;
+import com.example.gamemate.domain.auth.dto.JoinDTO;
+import com.example.gamemate.domain.auth.service.JoinService;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.ResponseBody;

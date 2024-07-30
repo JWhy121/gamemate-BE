@@ -1,4 +1,4 @@
-package com.example.gamemate.domain.user.controller;
+package com.example.gamemate.domain.auth.controller;
 
 import java.util.Collection;
 import java.util.Iterator;

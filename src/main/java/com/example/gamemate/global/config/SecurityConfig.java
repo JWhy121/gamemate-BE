@@ -1,8 +1,8 @@
 package com.example.gamemate.global.config;
 
-import com.example.gamemate.domain.user.jwt.JWTUtil;
-import com.example.gamemate.domain.user.jwt.filter.JWTFilter;
-import com.example.gamemate.domain.user.jwt.filter.LoginFilter;
+import com.example.gamemate.domain.auth.jwt.JWTUtil;
+import com.example.gamemate.domain.auth.jwt.filter.JWTFilter;
+import com.example.gamemate.domain.auth.jwt.filter.LoginFilter;
 import jakarta.servlet.http.HttpServletRequest;
 import java.util.Collections;
 import org.springframework.context.annotation.Bean;

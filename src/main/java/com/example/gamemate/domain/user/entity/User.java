@@ -1,4 +1,4 @@
-package com.example.gamemate.domain.user;
+package com.example.gamemate.domain.user.entity;
 
 import com.example.gamemate.global.audit.BaseEntity;
 import jakarta.persistence.Column;

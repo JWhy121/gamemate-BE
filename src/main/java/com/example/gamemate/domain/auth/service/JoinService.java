@@ -1,8 +1,7 @@
-package com.example.gamemate.domain.user.service;
+package com.example.gamemate.domain.auth.service;
 
-import com.example.gamemate.domain.user.User;
-import com.example.gamemate.domain.user.User.RoleType;
-import com.example.gamemate.domain.user.dto.JoinDTO;
+import com.example.gamemate.domain.user.entity.User;
+import com.example.gamemate.domain.auth.dto.JoinDTO;
 import com.example.gamemate.domain.user.repository.UserRepository;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
-package com.example.gamemate.domain.user.dto;
+package com.example.gamemate.domain.auth.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
