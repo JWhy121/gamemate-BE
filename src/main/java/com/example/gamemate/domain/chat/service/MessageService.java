@@ -12,7 +12,7 @@ import org.springframework.stereotype.Service;
 public class MessageService {
     private final MessageRepository messageRepository;
     private final ChatRoomRepository chatRoomRepository;
-    public void saveMessage(Long chatRoomId, String content, String writer){
+    public Message saveMessage(Long chatRoomId, String content, String writer){
 
 
         ChatRoom chatRoom = chatRoomRepository.findById(chatRoomId).orElse(null);
@@ -20,7 +20,7 @@ public class MessageService {
 
         Message message = new Message(content,chatRoom,writer);
 
-        messageRepository.save(message);
+        return messageRepository.save(message);
     }
 
 }

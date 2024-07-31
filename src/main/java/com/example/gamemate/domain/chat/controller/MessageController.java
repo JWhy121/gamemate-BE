@@ -1,5 +1,6 @@
 package com.example.gamemate.domain.chat.controller;
 
+import com.example.gamemate.domain.chat.domain.Message;
 import com.example.gamemate.domain.chat.model.message.MessageModel;
 import com.example.gamemate.domain.chat.model.message.OutputMessageModel;
 import com.example.gamemate.domain.chat.service.MessageService;
@@ -34,9 +35,9 @@ public class MessageController {
     public OutputMessageModel sendMessage(@Payload MessageModel messageModel, @DestinationVariable String chatRoomId) { // chatUuid 이 경로로부터 데이터를 추출할 수 있음. 그러기 위해서 @DestinationVariable 사용
         final String time = new SimpleDateFormat("HH:mm").format(new Date());
 
-        messageService.saveMessage(messageModel.getChatRoomId(),messageModel.getContent(),messageModel.getWriter());
+        Message newMessage =messageService.saveMessage(messageModel.getChatRoomId(),messageModel.getContent(),messageModel.getWriter());
 
-        return new OutputMessageModel(messageModel.getWriter(), messageModel.getChatRoomId(), messageModel.getContent(), time, OutputMessageModel.MessageType.CHAT);
+        return new OutputMessageModel(newMessage.getId(),messageModel.getWriter(), messageModel.getChatRoomId(), messageModel.getContent(), time, OutputMessageModel.MessageType.CHAT);
 
     }
     // MessageMapping의 경로로 클라이언트가 메시지를 보내오면 sendframe에 담사어 전송함.
