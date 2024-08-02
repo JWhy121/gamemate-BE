@@ -2,7 +2,6 @@ package com.example.gamemate.domain.friend.repository;
 
 import com.example.gamemate.domain.friend.entity.Friend;
 import com.example.gamemate.domain.friend.entity.QFriend;
-import com.example.gamemate.domain.user.QUser;
 import com.querydsl.jpa.impl.JPAQueryFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -18,7 +17,6 @@ public class FriendRepositoryCustomImpl implements FriendRepositoryCustom {
     @Override
     public List<Friend> findFriendsByStatus(Long userId, Friend.Status status) {
         QFriend friend = QFriend.friend;
-        QUser user = QUser.user;
 
         return queryFactory
                 .selectFrom(friend)
@@ -27,3 +25,4 @@ public class FriendRepositoryCustomImpl implements FriendRepositoryCustom {
                 .fetch();
     }
 }
+

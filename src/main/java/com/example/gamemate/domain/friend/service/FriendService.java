@@ -6,7 +6,7 @@ import com.example.gamemate.domain.friend.dto.FriendRequestDto;
 import com.example.gamemate.domain.friend.entity.Friend;
 import com.example.gamemate.domain.friend.entity.FriendId;
 import com.example.gamemate.domain.friend.repository.FriendRepository;
-import com.example.gamemate.domain.user.User;
+import com.example.gamemate.domain.user.entity.User;
 import com.example.gamemate.domain.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

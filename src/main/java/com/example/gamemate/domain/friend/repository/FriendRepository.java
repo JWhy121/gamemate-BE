@@ -2,7 +2,7 @@ package com.example.gamemate.domain.friend.repository;
 
 import com.example.gamemate.domain.friend.entity.Friend;
 import com.example.gamemate.domain.friend.entity.FriendId;
-import com.example.gamemate.domain.user.User;
+import com.example.gamemate.domain.user.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 

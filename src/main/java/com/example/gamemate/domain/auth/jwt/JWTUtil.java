@@ -1,4 +1,4 @@
-package com.example.gamemate.domain.user.jwt;
+package com.example.gamemate.domain.auth.jwt;
 
 import io.jsonwebtoken.Jwts;
 import java.nio.charset.StandardCharsets;

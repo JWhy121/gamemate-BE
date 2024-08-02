@@ -1,7 +1,7 @@
 package com.example.gamemate.domain.friend.dto;
 
 import com.example.gamemate.domain.friend.entity.Friend.Status;
-import com.example.gamemate.domain.user.User;
+import com.example.gamemate.domain.user.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

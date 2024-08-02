@@ -1,4 +1,4 @@
-package com.example.gamemate.domain.user.dto;
+package com.example.gamemate.domain.auth.dto;
 
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Size;
@@ -14,7 +14,7 @@ public class JoinDTO {
     private String username;
 
     @NotBlank(message = "비밀번호는 필수 입력 항목입니다.")
-    @Size(min = 8, max = 100, message = "비밀번호는 최소 8자, 최대 100자까지 입력 가능합니다.")
+//    @Size(min = 8, max = 100, message = "비밀번호는 최소 8자, 최대 100자까지 입력 가능합니다.")
     private String password;
 
     @NotBlank(message = "닉네임은 필수 입력 항목입니다.")

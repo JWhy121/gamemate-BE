@@ -22,9 +22,9 @@ public class QFriend extends EntityPathBase<Friend> {
 
     public static final QFriend friend = new QFriend("friend");
 
-    public final com.example.gamemate.domain.user.QUser receiver;
+    public final com.example.gamemate.domain.user.entity.QUser receiver;
 
-    public final com.example.gamemate.domain.user.QUser requester;
+    public final com.example.gamemate.domain.user.entity.QUser requester;
 
     public final EnumPath<Friend.Status> status = createEnum("status", Friend.Status.class);
 
@@ -46,8 +46,8 @@ public class QFriend extends EntityPathBase<Friend> {
 
     public QFriend(Class<? extends Friend> type, PathMetadata metadata, PathInits inits) {
         super(type, metadata, inits);
-        this.receiver = inits.isInitialized("receiver") ? new com.example.gamemate.domain.user.QUser(forProperty("receiver")) : null;
-        this.requester = inits.isInitialized("requester") ? new com.example.gamemate.domain.user.QUser(forProperty("requester")) : null;
+        this.receiver = inits.isInitialized("receiver") ? new com.example.gamemate.domain.user.entity.QUser(forProperty("receiver")) : null;
+        this.requester = inits.isInitialized("requester") ? new com.example.gamemate.domain.user.entity.QUser(forProperty("requester")) : null;
     }
 
 }

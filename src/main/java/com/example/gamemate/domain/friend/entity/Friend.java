@@ -1,6 +1,6 @@
 package com.example.gamemate.domain.friend.entity;
 
-import com.example.gamemate.domain.user.User;
+import com.example.gamemate.domain.user.entity.User;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;

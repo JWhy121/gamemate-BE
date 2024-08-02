@@ -1,9 +1,10 @@
-package com.example.gamemate.domain.user.jwt.filter;
+package com.example.gamemate.domain.auth.jwt.filter;
 
-import com.example.gamemate.domain.user.User;
-import com.example.gamemate.domain.user.User.RoleType;
-import com.example.gamemate.domain.user.dto.CustomUserDetails;
-import com.example.gamemate.domain.user.jwt.JWTUtil;
+import com.example.gamemate.domain.auth.dto.CustomUserDetailsDTO;
+import com.example.gamemate.domain.user.entity.User;
+import com.example.gamemate.domain.user.entity.User.RoleType;
+import com.example.gamemate.domain.auth.dto.CustomUserDetailsDTO;
+import com.example.gamemate.domain.auth.jwt.JWTUtil;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
@@ -68,7 +69,7 @@ public class JWTFilter extends OncePerRequestFilter {
         user.setRole(RoleType.valueOf(role));
 
         //UserDetails에 회원 정보 객체 담기
-        CustomUserDetails customUserDetails = new CustomUserDetails(user);
+        CustomUserDetailsDTO customUserDetails = new CustomUserDetailsDTO(user);
 
         //스프링 시큐리티 인증 토큰 생성
         Authentication authToken = new UsernamePasswordAuthenticationToken(customUserDetails, null, customUserDetails.getAuthorities());

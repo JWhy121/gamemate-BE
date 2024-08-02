@@ -1,4 +1,4 @@
-package com.example.gamemate.domain.user;
+package com.example.gamemate.domain.user.entity;
 
 import static com.querydsl.core.types.PathMetadataFactory.*;
 
@@ -15,7 +15,7 @@ import com.querydsl.core.types.Path;
 @Generated("com.querydsl.codegen.DefaultEntitySerializer")
 public class QUser extends EntityPathBase<User> {
 
-    private static final long serialVersionUID = -2104275478L;
+    private static final long serialVersionUID = 198234167L;
 
     public static final QUser user = new QUser("user");
 

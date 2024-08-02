@@ -4,7 +4,7 @@ import com.example.gamemate.domain.friend.dto.FriendPutDto;
 import com.example.gamemate.domain.friend.dto.FriendRequestDto;
 import com.example.gamemate.domain.friend.entity.Friend;
 import com.example.gamemate.domain.friend.service.FriendService;
-import com.example.gamemate.domain.user.dto.CustomUserDetails;
+import com.example.gamemate.domain.auth.dto.CustomUserDetailsDTO;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -30,7 +30,7 @@ public class FriendController {
     public ResponseEntity<FriendRequestDto> sendFriendRequest(@RequestBody FriendPostDto friendPostDto) {
         // JWT 토큰에서 인증된 사용자 정보 추출
         Authentication authentication = SecurityContextHolder.getContext().getAuthentication();
-        CustomUserDetails customUserDetails = (CustomUserDetails) authentication.getPrincipal();
+        CustomUserDetailsDTO customUserDetails = (CustomUserDetailsDTO) authentication.getPrincipal();
         Long requesterId = customUserDetails.getUser().getId();
 
         // DTO에 requesterId 설정
