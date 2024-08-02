@@ -11,5 +11,6 @@ import java.util.Optional;
 public interface GameRatingRepository extends JpaRepository<GameRating, Long> {
     List<GameRating> findByGameId(Long gameId);
     Optional<GameRating> findByGameIdAndId(Long gameId, Long ratingId);
-    void deleteByGameIdAndId(Long gameId, Long ratingId);
+    List<GameRating> findByGameIdAndDeletedDateIsNull(Long gameId);
+    Optional<GameRating> findByGameIdAndIdAndDeletedDateIsNull(Long gameId, Long ratingId);
 }

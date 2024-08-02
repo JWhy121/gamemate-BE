@@ -9,6 +9,7 @@ import com.example.gamemate.domain.game.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,12 +26,12 @@ public class GameCommentService {
     private GameRepository gameRepository;
 
     public List<GameCommentDto> getAllComments(Long gameId) {
-        List<GameComment> comments = gameCommentRepository.findByGameId(gameId);
+        List<GameComment> comments = gameCommentRepository.findByGameIdAndDeletedDateIsNull(gameId);
         return comments.stream().map(gameCommentMapper::toDto).collect(Collectors.toList());
     }
 
     public GameCommentDto getCommentById(Long gameId, Long commentId) {
-        GameComment comment = gameCommentRepository.findByGameIdAndId(gameId, commentId)
+        GameComment comment = gameCommentRepository.findByGameIdAndIdAndDeletedDateIsNull(gameId, commentId)
                 .orElseThrow(() -> new RuntimeException("Comment not found"));
         return gameCommentMapper.toDto(comment);
     }
@@ -40,13 +41,13 @@ public class GameCommentService {
                 .orElseThrow(() -> new RuntimeException("Game not found"));
 
         GameComment comment = gameCommentMapper.toEntity(commentDto);
-        comment.setGame(game); // gameId 대신 game 객체 설정
+        comment.setGame(game);
         GameComment savedComment = gameCommentRepository.save(comment);
         return gameCommentMapper.toDto(savedComment);
     }
 
     public GameCommentDto updateComment(Long gameId, Long commentId, GameCommentDto commentDto) {
-        GameComment comment = gameCommentRepository.findByGameIdAndId(gameId, commentId)
+        GameComment comment = gameCommentRepository.findByGameIdAndIdAndDeletedDateIsNull(gameId, commentId)
                 .orElseThrow(() -> new RuntimeException("Comment not found"));
         gameCommentMapper.updateEntityFromDto(commentDto, comment);
         GameComment updatedComment = gameCommentRepository.save(comment);
@@ -54,6 +55,9 @@ public class GameCommentService {
     }
 
     public void deleteComment(Long gameId, Long commentId) {
-        gameCommentRepository.deleteByGameIdAndId(gameId, commentId);
+        GameComment comment = gameCommentRepository.findByGameIdAndIdAndDeletedDateIsNull(gameId, commentId)
+                .orElseThrow(() -> new RuntimeException("Comment not found"));
+        comment.setDeletedDate(LocalDateTime.now()); // Soft delete 처리
+        gameCommentRepository.save(comment);
     }
 }

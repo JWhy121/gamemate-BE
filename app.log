@@ -103,3 +103,818 @@
 2024-08-02T15:42:29.656+09:00  INFO 10036 --- [gamemate] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
 2024-08-02T15:42:29.658+09:00  INFO 10036 --- [gamemate] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
 2024-08-02T15:42:29.665+09:00  INFO 10036 --- [gamemate] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-02T16:10:39.823+09:00  INFO 24952 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : Starting GamemateApplication using Java 17.0.10 with PID 24952 (C:\Users\user\gamemate\gamemate\build\classes\java\main started by user in C:\Users\user\gamemate\gamemate)
+2024-08-02T16:10:39.826+09:00 DEBUG 24952 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-02T16:10:39.827+09:00  INFO 24952 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T16:10:39.882+09:00  INFO 24952 --- [gamemate] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-02T16:10:39.882+09:00  INFO 24952 --- [gamemate] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-02T16:10:40.655+09:00  INFO 24952 --- [gamemate] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T16:10:40.841+09:00  INFO 24952 --- [gamemate] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 178 ms. Found 4 JPA repository interfaces.
+2024-08-02T16:10:41.488+09:00  INFO 24952 --- [gamemate] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T16:10:41.504+09:00  INFO 24952 --- [gamemate] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T16:10:41.505+09:00  INFO 24952 --- [gamemate] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T16:10:41.566+09:00  INFO 24952 --- [gamemate] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T16:10:41.566+09:00  INFO 24952 --- [gamemate] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1683 ms
+2024-08-02T16:10:41.752+09:00  INFO 24952 --- [gamemate] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T16:10:41.833+09:00  INFO 24952 --- [gamemate] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-02T16:10:41.889+09:00  INFO 24952 --- [gamemate] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T16:10:42.306+09:00  INFO 24952 --- [gamemate] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T16:10:42.342+09:00  INFO 24952 --- [gamemate] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-02T16:10:42.747+09:00  INFO 24952 --- [gamemate] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@21493e44
+2024-08-02T16:10:42.750+09:00  INFO 24952 --- [gamemate] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-02T16:10:42.810+09:00  WARN 24952 --- [gamemate] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T16:10:42.812+09:00  WARN 24952 --- [gamemate] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T16:10:44.098+09:00  INFO 24952 --- [gamemate] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T16:10:44.257+09:00  INFO 24952 --- [gamemate] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T16:10:45.043+09:00  WARN 24952 --- [gamemate] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T16:10:45.247+09:00 DEBUG 24952 --- [gamemate] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2024-08-02T16:10:45.255+09:00 DEBUG 24952 --- [gamemate] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/] in 'viewControllerHandlerMapping'
+2024-08-02T16:10:45.299+09:00 DEBUG 24952 --- [gamemate] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T16:10:45.463+09:00 DEBUG 24952 --- [gamemate] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T16:10:45.510+09:00 DEBUG 24952 --- [gamemate] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T16:10:45.689+09:00  WARN 24952 --- [gamemate] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : Unable to start LiveReload server
+2024-08-02T16:10:45.742+09:00  INFO 24952 --- [gamemate] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T16:10:45.752+09:00  INFO 24952 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : Started GamemateApplication in 6.293 seconds (process running for 7.002)
+2024-08-02T16:12:03.249+09:00  INFO 24952 --- [gamemate] [http-nio-8080-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-02T16:12:03.249+09:00  INFO 24952 --- [gamemate] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-02T16:12:03.249+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-08-02T16:12:03.249+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-08-02T16:12:03.249+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-08-02T16:12:03.250+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@2a366aa2
+2024-08-02T16:12:03.250+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@282324be
+2024-08-02T16:12:03.251+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-08-02T16:12:03.251+09:00  INFO 24952 --- [gamemate] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-08-02T16:12:03.281+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/games", parameters={}
+2024-08-02T16:12:03.282+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameController#getAllGames()
+2024-08-02T16:12:03.465+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:12:03.469+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-1] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameDto(id=1, title=SNOW BROS. 2 SPECIAL(스노우 브라더스2 스페셜), developer=(주)그라비티, description=앗뜨거 대왕을 물리치 (truncated)...]
+2024-08-02T16:12:03.523+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:12:11.329+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/games/60", parameters={}
+2024-08-02T16:12:11.329+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameController#getGameById(Long)
+2024-08-02T16:12:11.356+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:12:11.356+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [GameDto(id=60, title=다이노 부화장, developer=한국콘텐츠진흥원, description=수학 수식을 이용한 퍼즐을 풀어 점수를 획득해 공룡알을 부화시키는 교 (truncated)...]
+2024-08-02T16:12:11.357+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:12:18.173+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/games/61", parameters={}
+2024-08-02T16:12:18.173+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameController#updateGame(Long, GameDto)
+2024-08-02T16:12:18.204+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [GameDto(id=null, title=Updated Game Title, developer=Updated Developer, description=Updated Descript (truncated)...]
+2024-08-02T16:12:18.213+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Failed to complete request: java.lang.RuntimeException: Game not found
+2024-08-02T16:12:18.213+09:00 ERROR 24952 --- [gamemate] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: java.lang.RuntimeException: Game not found] with root cause
+
+java.lang.RuntimeException: Game not found
+	at com.example.gamemate.domain.game.service.GameService.lambda$updateGame$2(GameService.java:93) ~[main/:na]
+	at java.base/java.util.Optional.orElseThrow(Optional.java:403) ~[na:na]
+	at com.example.gamemate.domain.game.service.GameService.updateGame(GameService.java:93) ~[main/:na]
+	at com.example.gamemate.domain.game.controller.GameController.updateGame(GameController.java:68) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-08-02T16:12:18.226+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for PUT "/error", parameters={}
+2024-08-02T16:12:18.226+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-08-02T16:12:18.231+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:12:18.232+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Fri Aug 02 16:12:18 KST 2024, status=500, error=Internal Server Error, trace=java.lang.Ru (truncated)...]
+2024-08-02T16:12:18.238+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2024-08-02T16:12:36.571+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/games", parameters={}
+2024-08-02T16:12:36.572+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameController#createGame(GameDto)
+2024-08-02T16:12:36.573+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [GameDto(id=null, title=New Game, developer=Game Developer, description=Game Description, classes=Gen (truncated)...]
+2024-08-02T16:12:36.624+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:12:36.624+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [GameDto(id=62, title=New Game, developer=Game Developer, description=Game Description, classes=Gener (truncated)...]
+2024-08-02T16:12:36.625+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:12:43.560+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/games/62", parameters={}
+2024-08-02T16:12:43.560+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameController#updateGame(Long, GameDto)
+2024-08-02T16:12:43.561+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-3] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [GameDto(id=null, title=Updated Game Title, developer=Updated Developer, description=Updated Descript (truncated)...]
+2024-08-02T16:12:43.584+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:12:43.585+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [GameDto(id=62, title=Updated Game Title, developer=Updated Developer, description=Updated Descriptio (truncated)...]
+2024-08-02T16:12:43.586+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:12:55.408+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : DELETE "/api/v1/games/62", parameters={}
+2024-08-02T16:12:55.408+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameController#deleteGame(Long)
+2024-08-02T16:12:55.425+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:12:55.426+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-9] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2024-08-02T16:12:55.426+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
+2024-08-02T16:13:09.418+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/games/62", parameters={}
+2024-08-02T16:13:09.419+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameController#getGameById(Long)
+2024-08-02T16:13:09.425+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:13:09.425+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [GameDto(id=62, title=Updated Game Title, developer=Updated Developer, description=Updated Descriptio (truncated)...]
+2024-08-02T16:13:09.427+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:15:41.959+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/fetch-games?display=10&pageno=7", parameters={masked}
+2024-08-02T16:15:41.959+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameController#fetchAndSaveGames(String, String, String, String, String, int, int)
+2024-08-02T16:15:42.065+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-7] o.s.w.r.f.client.ExchangeFunctions       : [4548a743] HTTP GET https://www.grac.or.kr/WebService/GameSearchSvc.asmx/game?op=game&gametitle&entname&rateno&startdate&enddate&display=10&pageno=7
+2024-08-02T16:15:43.972+09:00 DEBUG 24952 --- [gamemate] [reactor-http-nio-2] o.s.w.r.f.client.ExchangeFunctions       : [4548a743] [44167996-1] Response 200 OK
+2024-08-02T16:15:44.005+09:00 DEBUG 24952 --- [gamemate] [reactor-http-nio-2] org.springframework.web.HttpLogging      : [4548a743] [44167996-1] Decoded "<?xml version="1.0" encoding="utf-8"?><EOL><EOL><result><EOL><EOL>  <tcount>37536</tcount><EOL><EOL>  <pageno>7</pageno><EOL><EOL>   (truncated)..."
+2024-08-02T16:15:44.020+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-7] c.e.g.domain.game.service.GameService    : Fetched response: {"result": {
+    "tcount": 37536,
+    "item": [
+        {
+            "summary": "다양한 문제를 풀고 두뇌를 훈련하는 퍼즐 게임 3종(섞어섞어, 틀린그림찾기, 스도쿠)",
+            "rateno": "CC-OM-240718-003",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "주식회사 레브잇",
+            "canceleddate": "",
+            "genre": "퍼즐",
+            "gametitle": "말랑말랑 두뇌훈련",
+            "cancelstatus": false,
+            "discriptors": "",
+            "givenrate": "전체이용가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "로한 대륙의 모든 종족들이 주신 온의 파편으로부터 힘을 얻기 위한 혼란의 시대를 그린 롤플레잉 게임물",
+            "rateno": "CC-OM-240718-004",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "(주)플레이위드코리아",
+            "canceleddate": "",
+            "genre": "MMORPG",
+            "gametitle": "로한2",
+            "cancelstatus": false,
+            "discriptors": "폭력성,사행성",
+            "givenrate": "청소년이용불가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "이용자 간 훌라 대결을 펼칠 수 있는 모바일 베팅성 웹보드 게임물",
+            "rateno": "CC-OM-240718-005",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "엔에이치엔 주식회사",
+            "canceleddate": "",
+            "genre": "보드게임(베팅성)",
+            "gametitle": "한게임포커 클래식-훌라 with PC",
+            "cancelstatus": false,
+            "discriptors": "사행성",
+            "givenrate": "청소년이용불가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "국어 문법 퀴즈를 통해 마을에 숨어 있는 몬스터를 찾아 체포하여 점수를 획득하는 게임",
+            "rateno": "CC-OM-240718-006",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "한국콘텐츠진흥원",
+            "canceleddate": "",
+            "genre": "교육용",
+            "gametitle": "댕구의 몬스터 체포하기",
+            "cancelstatus": false,
+            "discriptors": "",
+            "givenrate": "전체이용가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "제한 시간 내에 블록을 터트려 점수를 획득하는 퍼즐 게임",
+            "rateno": "CC-OM-240718-007",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "한국콘텐츠진흥원",
+            "canceleddate": "",
+            "genre": "퍼즐",
+            "gametitle": "까로의 공동체 생활",
+            "cancelstatus": false,
+            "discriptors": "",
+            "givenrate": "전체이용가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "도착 지점까지 달려가며 영어 읽기 문제를 맞혀 점수를 획득하는 게임",
+            "rateno": "CC-OM-240718-008",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "한국콘텐츠진흥원",
+            "canceleddate": "",
+            "genre": "교육용",
+            "gametitle": "해링의 뛰기 훈련",
+            "cancelstatus": false,
+            "discriptors": "",
+            "givenrate": "전체이용가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "숨은 그림찾기 방식으로 숨겨진 오브젝트를 찾아 건국과 인물 등의 국사 내용을 학습하는 역사 교육용 게임물",
+            "rateno": "CC-OM-240718-009",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "한국콘텐츠진흥원",
+            "canceleddate": "",
+            "genre": "교육용",
+            "gametitle": "츄르아의 역사 탐방",
+            "cancelstatus": false,
+            "discriptors": "",
+            "givenrate": "전체이용가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "국어 문제를 풀어 스테이지를 탈출하고 보물을 수집하는 교육용 게임물",
+            "rateno": "CC-OM-240718-010",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "한국콘텐츠진흥원",
+            "canceleddate": "",
+            "genre": "교육용",
+            "gametitle": "수호의 던전탐험기",
+            "cancelstatus": false,
+            "discriptors": "",
+            "givenrate": "전체이용가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "제한 시간 내에 등장하는 몬스터와 전투를 펼치면서 영어 어휘 스킬을 사용하여 그에 맞는 영어 이름을 가진 적을 공격해 점수를 얻는 게임",
+            "rateno": "CC-OM-240718-011",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "한국콘텐츠진흥원",
+            "canceleddate": "",
+            "genre": "교육용",
+            "gametitle": "수호의 마법대전",
+            "cancelstatus": false,
+            "discriptors": "폭력성",
+            "givenrate": "전체이용가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "몬스터로부터 마을을 지키는 타워 디펜스 게임",
+            "rateno": "CC-OM-240718-012",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "한국콘텐츠진흥원",
+            "canceleddate": "",
+            "genre": "액션",
+            "gametitle": "수호의 마을지키기",
+            "cancelstatus": false,
+            "discriptors": "폭력성",
+            "givenrate": "전체이용가",
+            "platform": "모바일 게임"
+        }
+    ],
+    "pageno": 7,
+    "res_date": "2024-08-02 오후 4:15:42"
+}}
+2024-08-02T16:15:44.043+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-7] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@34e7b7bc
+2024-08-02T16:15:44.051+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-7] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@7852cc9a
+2024-08-02T16:15:44.059+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-7] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@427d5430
+2024-08-02T16:15:44.069+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-7] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@7e71ade0
+2024-08-02T16:15:44.077+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-7] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@5e931ae5
+2024-08-02T16:15:44.084+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-7] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@58c80c29
+2024-08-02T16:15:44.093+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-7] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@e300bc4
+2024-08-02T16:15:44.103+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-7] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@76308547
+2024-08-02T16:15:44.112+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-7] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@5ae877b3
+2024-08-02T16:15:44.122+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-7] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@764832fa
+2024-08-02T16:15:44.123+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:15:44.124+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Writing ["Games fetched and saved successfully"]
+2024-08-02T16:15:44.125+09:00 DEBUG 24952 --- [gamemate] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:20:34.411+09:00  INFO 24952 --- [gamemate] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T16:20:34.413+09:00  INFO 24952 --- [gamemate] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-02T16:20:34.419+09:00  INFO 24952 --- [gamemate] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-02T16:20:37.631+09:00  INFO 29352 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : Starting GamemateApplication using Java 17.0.10 with PID 29352 (C:\Users\user\gamemate\gamemate\build\classes\java\main started by user in C:\Users\user\gamemate\gamemate)
+2024-08-02T16:20:37.632+09:00 DEBUG 29352 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-02T16:20:37.633+09:00  INFO 29352 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T16:20:37.674+09:00  INFO 29352 --- [gamemate] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-02T16:20:37.675+09:00  INFO 29352 --- [gamemate] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-02T16:20:38.299+09:00  INFO 29352 --- [gamemate] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T16:20:38.412+09:00  INFO 29352 --- [gamemate] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 108 ms. Found 4 JPA repository interfaces.
+2024-08-02T16:20:39.002+09:00  INFO 29352 --- [gamemate] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T16:20:39.013+09:00  INFO 29352 --- [gamemate] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T16:20:39.014+09:00  INFO 29352 --- [gamemate] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T16:20:39.058+09:00  INFO 29352 --- [gamemate] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T16:20:39.059+09:00  INFO 29352 --- [gamemate] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1384 ms
+2024-08-02T16:20:39.195+09:00  INFO 29352 --- [gamemate] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T16:20:39.271+09:00  INFO 29352 --- [gamemate] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-02T16:20:39.305+09:00  INFO 29352 --- [gamemate] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T16:20:39.578+09:00  INFO 29352 --- [gamemate] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T16:20:39.603+09:00  INFO 29352 --- [gamemate] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-02T16:20:39.875+09:00  INFO 29352 --- [gamemate] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@5a2e49a1
+2024-08-02T16:20:39.877+09:00  INFO 29352 --- [gamemate] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-02T16:20:39.924+09:00  WARN 29352 --- [gamemate] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T16:20:39.926+09:00  WARN 29352 --- [gamemate] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T16:20:40.834+09:00  INFO 29352 --- [gamemate] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T16:20:40.901+09:00  INFO 29352 --- [gamemate] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T16:20:41.403+09:00  WARN 29352 --- [gamemate] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T16:20:41.517+09:00 DEBUG 29352 --- [gamemate] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2024-08-02T16:20:41.523+09:00 DEBUG 29352 --- [gamemate] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/] in 'viewControllerHandlerMapping'
+2024-08-02T16:20:41.551+09:00 DEBUG 29352 --- [gamemate] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T16:20:41.652+09:00 DEBUG 29352 --- [gamemate] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T16:20:41.678+09:00 DEBUG 29352 --- [gamemate] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T16:20:41.791+09:00  INFO 29352 --- [gamemate] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T16:20:41.830+09:00  INFO 29352 --- [gamemate] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T16:20:41.837+09:00  INFO 29352 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : Started GamemateApplication in 4.517 seconds (process running for 5.044)
+2024-08-02T16:20:48.558+09:00  INFO 29352 --- [gamemate] [http-nio-8080-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2024-08-02T16:20:48.558+09:00  INFO 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2024-08-02T16:20:48.558+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected StandardServletMultipartResolver
+2024-08-02T16:20:48.558+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected AcceptHeaderLocaleResolver
+2024-08-02T16:20:48.558+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected FixedThemeResolver
+2024-08-02T16:20:48.559+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.view.DefaultRequestToViewNameTranslator@577748e8
+2024-08-02T16:20:48.559+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Detected org.springframework.web.servlet.support.SessionFlashMapManager@ce3ccb2
+2024-08-02T16:20:48.560+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : enableLoggingRequestDetails='false': request parameters and headers will be masked to prevent unsafe logging of potentially sensitive data
+2024-08-02T16:20:48.560+09:00  INFO 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 2 ms
+2024-08-02T16:20:48.581+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/fetch-games?display=10&pageno=8", parameters={masked}
+2024-08-02T16:20:48.584+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameController#fetchAndSaveGames(String, String, String, String, String, int, int)
+2024-08-02T16:20:48.651+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.w.r.f.client.ExchangeFunctions       : [65636b5a] HTTP GET https://www.grac.or.kr/WebService/GameSearchSvc.asmx/game?op=game&gametitle&entname&rateno&startdate&enddate&display=10&pageno=8
+2024-08-02T16:20:50.162+09:00 DEBUG 29352 --- [gamemate] [reactor-http-nio-2] o.s.w.r.f.client.ExchangeFunctions       : [65636b5a] [6c02a6c7-1] Response 200 OK
+2024-08-02T16:20:50.184+09:00 DEBUG 29352 --- [gamemate] [reactor-http-nio-2] org.springframework.web.HttpLogging      : [65636b5a] [6c02a6c7-1] Decoded "<?xml version="1.0" encoding="utf-8"?><EOL><EOL><result><EOL><EOL>  <tcount>37536</tcount><EOL><EOL>  <pageno>8</pageno><EOL><EOL>   (truncated)..."
+2024-08-02T16:20:50.191+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] c.e.g.domain.game.service.GameService    : Fetched response: {"result": {
+    "tcount": 37536,
+    "item": [
+        {
+            "summary": "수학 관련 각종 문제를 풀고 단서를 획득하여 보물을 얻고 던전을 탐험하는 게임물",
+            "rateno": "CC-OM-240718-013",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "한국콘텐츠진흥원",
+            "canceleddate": "",
+            "genre": "교육용",
+            "gametitle": "공룡들의 던전탐험기",
+            "cancelstatus": false,
+            "discriptors": "",
+            "givenrate": "전체이용가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "숨은 그림찾기, 짝 맞추기, 틀린 그림찾기 등의 퍼즐 방식으로 진행하는 실과 학습 교육용 게임물",
+            "rateno": "CC-OM-240718-014",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "한국콘텐츠진흥원",
+            "canceleddate": "",
+            "genre": "교육용",
+            "gametitle": "다이노의 숨은 물건 찾기",
+            "cancelstatus": false,
+            "discriptors": "",
+            "givenrate": "전체이용가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "과학 문제를 풀고 공룡 타워를 설치하여  몬스터를 막는 교육용 게임",
+            "rateno": "CC-OM-240718-015",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "한국콘텐츠진흥원",
+            "canceleddate": "",
+            "genre": "교육용",
+            "gametitle": "다이노 타워",
+            "cancelstatus": false,
+            "discriptors": "폭력성",
+            "givenrate": "전체이용가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "다양한 도형으로 이루어진 퍼즐을 맞추고 가구를 얻어 둥지를 꾸미는 수학 교육용 게임",
+            "rateno": "CC-OM-240718-016",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "한국콘텐츠진흥원",
+            "canceleddate": "",
+            "genre": "교육용",
+            "gametitle": "다이노의 둥지만들기",
+            "cancelstatus": false,
+            "discriptors": "",
+            "givenrate": "전체이용가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "코드 블록을 이용, 코딩을 완성하여 티노를 움직여 장애물을 지나가는 내용의 코딩 교육 게임물",
+            "rateno": "CC-OM-240718-017",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "한국콘텐츠진흥원",
+            "canceleddate": "",
+            "genre": "교육용",
+            "gametitle": "티노의 모험",
+            "cancelstatus": false,
+            "discriptors": "",
+            "givenrate": "전체이용가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "공룡알을 목표지점까지 이동시키는 게임",
+            "rateno": "CC-OM-240718-018",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "한국콘텐츠진흥원",
+            "canceleddate": "",
+            "genre": "교육용",
+            "gametitle": "티노의 여행",
+            "cancelstatus": false,
+            "discriptors": "",
+            "givenrate": "전체이용가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "수학 수식을 이용한 퍼즐을 풀어 점수를 획득해 공룡알을 부화시키는 교육용 게임",
+            "rateno": "CC-OM-240718-019",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "한국콘텐츠진흥원",
+            "canceleddate": "",
+            "genre": "교육용",
+            "gametitle": "다이노 부화장",
+            "cancelstatus": false,
+            "discriptors": "",
+            "givenrate": "전체이용가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "소방관 공룡이 되어 화재 현장에서 화재를 진압하고 친구들을 대피시키는 안전 및 과학(화학) 교육용 게임",
+            "rateno": "CC-OM-240718-020",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "한국콘텐츠진흥원",
+            "canceleddate": "",
+            "genre": "교육용",
+            "gametitle": "다이노의 60초 소방대",
+            "cancelstatus": false,
+            "discriptors": "",
+            "givenrate": "전체이용가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "스테이지를 클리어하여 등장하는 캐릭터의 복장을 탈의시키는 비행슈팅 게임물",
+            "rateno": "CC-OM-240718-021",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "젠스티",
+            "canceleddate": "",
+            "genre": "비행슈팅",
+            "gametitle": "전장의 그녀 5",
+            "cancelstatus": false,
+            "discriptors": "선정성",
+            "givenrate": "청소년이용불가",
+            "platform": "모바일 게임"
+        },
+        {
+            "summary": "종말 이후 미래를 배경으로 하는 오픈월드 생존 게임물",
+            "rateno": "CC-OP-240718-001",
+            "orgname": "게임물관리위원회",
+            "rateddate": "2024-07-18",
+            "entname": "NETEASE INTERACTIVE ENTERTAINMENT PTE. LTD.",
+            "canceleddate": "",
+            "genre": "어드벤처",
+            "gametitle": "Once Human",
+            "cancelstatus": false,
+            "discriptors": "폭력성",
+            "givenrate": "청소년이용불가",
+            "platform": "PC/온라인 게임"
+        }
+    ],
+    "pageno": 8,
+    "res_date": "2024-08-02 오후 4:20:48"
+}}
+2024-08-02T16:20:50.339+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@196d5408
+2024-08-02T16:20:50.346+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@67c450ce
+2024-08-02T16:20:50.355+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@737d182
+2024-08-02T16:20:50.361+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@6462083d
+2024-08-02T16:20:50.369+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@1cfe59f9
+2024-08-02T16:20:50.376+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@35efd80b
+2024-08-02T16:20:50.384+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@74cf6434
+2024-08-02T16:20:50.392+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@b9eb1c8
+2024-08-02T16:20:50.402+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@5fc5d315
+2024-08-02T16:20:50.410+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] c.e.g.domain.game.service.GameService    : Game saved: com.example.gamemate.domain.game.entity.Game@4e669911
+2024-08-02T16:20:50.423+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Using 'text/plain', given [*/*] and supported [text/plain, */*, application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:20:50.424+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Writing ["Games fetched and saved successfully"]
+2024-08-02T16:20:50.431+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:23:55.429+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/games/82", parameters={}
+2024-08-02T16:23:55.432+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameController#getGameById(Long)
+2024-08-02T16:23:55.526+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:23:55.534+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [GameDto(id=82, title=Once Human, developer=NETEASE INTERACTIVE ENTERTAINMENT PTE. LTD., description= (truncated)...]
+2024-08-02T16:23:55.546+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:24:03.959+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/games/62", parameters={}
+2024-08-02T16:24:03.960+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameController#getGameById(Long)
+2024-08-02T16:24:03.967+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:24:03.967+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [GameDto(id=62, title=Updated Game Title, developer=Updated Developer, description=Updated Descriptio (truncated)...]
+2024-08-02T16:24:03.968+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:24:54.463+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/games/62", parameters={}
+2024-08-02T16:24:54.464+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameController#getGameById(Long)
+2024-08-02T16:24:54.469+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:24:54.469+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [GameDto(id=62, title=Updated Game Title, developer=Updated Developer, description=Updated Descriptio (truncated)...]
+2024-08-02T16:24:54.470+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:26:35.299+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/games/62", parameters={}
+2024-08-02T16:26:35.299+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameController#getGameById(Long)
+2024-08-02T16:26:35.305+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:26:35.305+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-10] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [GameDto(id=62, title=Updated Game Title, developer=Updated Developer, description=Updated Descriptio (truncated)...]
+2024-08-02T16:26:35.306+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:30:55.645+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : DELETE "/api/v1/games/62", parameters={}
+2024-08-02T16:30:55.645+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameController#deleteGame(Long)
+2024-08-02T16:30:55.673+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:30:55.674+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2024-08-02T16:30:55.674+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
+2024-08-02T16:31:01.832+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : DELETE "/api/v1/games/63", parameters={}
+2024-08-02T16:31:01.833+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameController#deleteGame(Long)
+2024-08-02T16:31:01.846+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:31:01.847+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2024-08-02T16:31:01.847+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
+2024-08-02T16:31:40.643+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/games/1/comments", parameters={}
+2024-08-02T16:31:40.643+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-4] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameCommentController#createComment(Long, GameCommentDto)
+2024-08-02T16:31:40.661+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-4] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [GameCommentDto(id=null, userId=1, gameId=null, content=어렸을 때 많이 했던 게임!)]
+2024-08-02T16:31:40.689+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:31:40.689+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-4] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [GameCommentDto(id=6, userId=1, gameId=1, content=어렸을 때 많이 했던 게임!)]
+2024-08-02T16:31:40.690+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-4] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:31:46.107+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/games/1/comments", parameters={}
+2024-08-02T16:31:46.107+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameCommentController#createComment(Long, GameCommentDto)
+2024-08-02T16:31:46.108+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [GameCommentDto(id=null, userId=1, gameId=null, content=어렸을 때 많이 했던 게임!)]
+2024-08-02T16:31:46.120+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:31:46.120+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [GameCommentDto(id=7, userId=1, gameId=1, content=어렸을 때 많이 했던 게임!)]
+2024-08-02T16:31:46.121+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:31:52.785+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/games/1/ratings", parameters={}
+2024-08-02T16:31:52.785+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameRatingController#createRating(Long, GameRatingDto)
+2024-08-02T16:31:52.789+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-7] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [GameRatingDto(id=null, userId=1, gameId=null, rating=8)]
+2024-08-02T16:31:52.810+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:31:52.810+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [GameRatingDto(id=5, userId=1, gameId=1, rating=8)]
+2024-08-02T16:31:52.811+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:31:53.872+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : POST "/api/v1/games/1/ratings", parameters={}
+2024-08-02T16:31:53.872+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameRatingController#createRating(Long, GameRatingDto)
+2024-08-02T16:31:53.873+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-8] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [GameRatingDto(id=null, userId=1, gameId=null, rating=8)]
+2024-08-02T16:31:53.886+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:31:53.886+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [GameRatingDto(id=6, userId=1, gameId=1, rating=8)]
+2024-08-02T16:31:53.887+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:32:13.224+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/games/1/comments", parameters={}
+2024-08-02T16:32:13.224+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameCommentController#getAllComments(Long)
+2024-08-02T16:32:13.377+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:32:13.378+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameCommentDto(id=3, userId=1, gameId=1, content=어렸을 때 많이 했던 게임이다!), GameCommentDto(id=4, userId=1, (truncated)...]
+2024-08-02T16:32:13.380+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:32:18.018+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/games/1/ratings", parameters={}
+2024-08-02T16:32:18.018+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameRatingController#getAllRatings(Long)
+2024-08-02T16:32:18.025+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:32:18.025+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameRatingDto(id=2, userId=1, gameId=1, rating=8), GameRatingDto(id=3, userId=1, gameId=1, rating=9 (truncated)...]
+2024-08-02T16:32:18.027+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:32:24.413+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/games/1/comments/6", parameters={}
+2024-08-02T16:32:24.414+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-1] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameCommentController#getCommentById(Long, Long)
+2024-08-02T16:32:24.421+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:32:24.422+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-1] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [GameCommentDto(id=6, userId=1, gameId=1, content=어렸을 때 많이 했던 게임!)]
+2024-08-02T16:32:24.422+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-1] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:32:28.941+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/games/1/ratings/6", parameters={}
+2024-08-02T16:32:28.942+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-3] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameRatingController#getRatingById(Long, Long)
+2024-08-02T16:32:28.950+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:32:28.950+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-3] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [GameRatingDto(id=6, userId=1, gameId=1, rating=8)]
+2024-08-02T16:32:28.951+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-3] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:32:34.818+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/games/1/comments/6", parameters={}
+2024-08-02T16:32:34.819+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameCommentController#updateComment(Long, Long, GameCommentDto)
+2024-08-02T16:32:34.820+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [GameCommentDto(id=3, userId=1, gameId=1, content=어렸을 때 많이 했던 게임이다!)]
+2024-08-02T16:32:34.836+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Failed to complete request: org.springframework.orm.jpa.JpaSystemException: identifier of an instance of com.example.gamemate.domain.game.entity.GameComment was altered from 3 to 6
+2024-08-02T16:32:34.837+09:00 ERROR 29352 --- [gamemate] [http-nio-8080-exec-2] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.orm.jpa.JpaSystemException: identifier of an instance of com.example.gamemate.domain.game.entity.GameComment was altered from 3 to 6] with root cause
+
+org.hibernate.HibernateException: identifier of an instance of com.example.gamemate.domain.game.entity.GameComment was altered from 3 to 6
+	at org.hibernate.event.internal.DefaultFlushEntityEventListener.checkId(DefaultFlushEntityEventListener.java:98) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultFlushEntityEventListener.getValues(DefaultFlushEntityEventListener.java:182) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultFlushEntityEventListener.onFlushEntity(DefaultFlushEntityEventListener.java:141) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.flushEntities(AbstractFlushingEventListener.java:234) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.flushEverythingToExecutions(AbstractFlushingEventListener.java:85) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.AbstractFlushingEventListener.flushEverythingToExecutions(AbstractFlushingEventListener.java:79) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.internal.DefaultFlushEventListener.onFlush(DefaultFlushEventListener.java:40) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.event.service.internal.EventListenerGroupImpl.fireEventOnEachListener(EventListenerGroupImpl.java:127) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.doFlush(SessionImpl.java:1425) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.managedFlush(SessionImpl.java:487) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.flushBeforeTransactionCompletion(SessionImpl.java:2324) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.internal.SessionImpl.beforeTransactionCompletion(SessionImpl.java:1981) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.jdbc.internal.JdbcCoordinatorImpl.beforeTransactionCompletion(JdbcCoordinatorImpl.java:439) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl.beforeCompletionCallback(JdbcResourceLocalTransactionCoordinatorImpl.java:169) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.resource.transaction.backend.jdbc.internal.JdbcResourceLocalTransactionCoordinatorImpl$TransactionDriverControlImpl.commit(JdbcResourceLocalTransactionCoordinatorImpl.java:267) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.hibernate.engine.transaction.internal.TransactionImpl.commit(TransactionImpl.java:101) ~[hibernate-core-6.5.2.Final.jar:6.5.2.Final]
+	at org.springframework.orm.jpa.JpaTransactionManager.doCommit(JpaTransactionManager.java:562) ~[spring-orm-6.1.11.jar:6.1.11]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.processCommit(AbstractPlatformTransactionManager.java:795) ~[spring-tx-6.1.11.jar:6.1.11]
+	at org.springframework.transaction.support.AbstractPlatformTransactionManager.commit(AbstractPlatformTransactionManager.java:758) ~[spring-tx-6.1.11.jar:6.1.11]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.commitTransactionAfterReturning(TransactionAspectSupport.java:663) ~[spring-tx-6.1.11.jar:6.1.11]
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:413) ~[spring-tx-6.1.11.jar:6.1.11]
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:119) ~[spring-tx-6.1.11.jar:6.1.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.dao.support.PersistenceExceptionTranslationInterceptor.invoke(PersistenceExceptionTranslationInterceptor.java:138) ~[spring-tx-6.1.11.jar:6.1.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.data.jpa.repository.support.CrudMethodMetadataPostProcessor$CrudMethodMetadataPopulatingMethodInterceptor.invoke(CrudMethodMetadataPostProcessor.java:165) ~[spring-data-jpa-3.3.2.jar:3.3.2]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.aop.interceptor.ExposeInvocationInterceptor.invoke(ExposeInvocationInterceptor.java:97) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:184) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.aop.framework.JdkDynamicAopProxy.invoke(JdkDynamicAopProxy.java:223) ~[spring-aop-6.1.11.jar:6.1.11]
+	at jdk.proxy4/jdk.proxy4.$Proxy152.save(Unknown Source) ~[na:na]
+	at com.example.gamemate.domain.game.service.GameCommentService.updateComment(GameCommentService.java:53) ~[main/:na]
+	at com.example.gamemate.domain.game.controller.GameCommentController.updateComment(GameCommentController.java:38) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.aop.support.AopUtils.invokeJoinpointUsingReflection(AopUtils.java:354) ~[spring-aop-6.1.11.jar:6.1.11]
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:716) ~[spring-aop-6.1.11.jar:6.1.11]
+	at com.example.gamemate.domain.game.controller.GameCommentController$$SpringCGLIB$$0.updateComment(<generated>) ~[main/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:255) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:188) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:926) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:831) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.FrameworkServlet.doPut(FrameworkServlet.java:925) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:593) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:108) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy.lambda$doFilterInternal$3(FilterChainProxy.java:231) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:365) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.intercept.AuthorizationFilter.doFilter(AuthorizationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:126) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:120) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:100) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:179) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:107) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:93) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:91) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:90) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:75) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:82) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.SecurityContextHolderFilter.doFilter(SecurityContextHolderFilter.java:69) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:62) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.session.DisableEncodeUrlFilter.doFilterInternal(DisableEncodeUrlFilter.java:42) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:374) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:233) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:191) ~[spring-security-web-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.servlet.handler.HandlerMappingIntrospector.lambda$createCacheFilter$3(HandlerMappingIntrospector.java:195) ~[spring-webmvc-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter$VirtualFilterChain.doFilter(CompositeFilter.java:113) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.CompositeFilter.doFilter(CompositeFilter.java:74) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.security.config.annotation.web.configuration.WebMvcSecurityConfiguration$CompositeFilterChainProxy.doFilter(WebMvcSecurityConfiguration.java:230) ~[spring-security-config-6.3.1.jar:6.3.1]
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:352) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:268) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.1.11.jar:6.1.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:115) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:389) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:904) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1741) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1190) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:659) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.26.jar:10.1.26]
+	at java.base/java.lang.Thread.run(Thread.java:842) ~[na:na]
+
+2024-08-02T16:32:34.853+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : "ERROR" dispatch for PUT "/error", parameters={}
+2024-08-02T16:32:34.853+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to org.springframework.boot.autoconfigure.web.servlet.error.BasicErrorController#error(HttpServletRequest)
+2024-08-02T16:32:34.860+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:32:34.860+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [{timestamp=Fri Aug 02 16:32:34 KST 2024, status=500, error=Internal Server Error, trace=org.springfr (truncated)...]
+2024-08-02T16:32:34.868+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-2] o.s.web.servlet.DispatcherServlet        : Exiting from "ERROR" dispatch, status 500
+2024-08-02T16:32:56.140+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/games/1/comments/6", parameters={}
+2024-08-02T16:32:56.140+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-5] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameCommentController#updateComment(Long, Long, GameCommentDto)
+2024-08-02T16:32:56.140+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-5] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [GameCommentDto(id=6, userId=1, gameId=1, content=어렸을 때 많이 했던 게임이다!)]
+2024-08-02T16:32:56.154+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:32:56.154+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-5] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [GameCommentDto(id=6, userId=1, gameId=1, content=어렸을 때 많이 했던 게임이다!)]
+2024-08-02T16:32:56.155+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-5] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:33:07.724+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : PUT "/api/v1/games/1/ratings/6", parameters={}
+2024-08-02T16:33:07.724+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-6] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameRatingController#updateRating(Long, Long, GameRatingDto)
+2024-08-02T16:33:07.725+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-6] m.m.a.RequestResponseBodyMethodProcessor : Read "application/json;charset=UTF-8" to [GameRatingDto(id=6, userId=1, gameId=1, rating=9)]
+2024-08-02T16:33:07.741+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:33:07.743+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-6] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Writing [GameRatingDto(id=6, userId=1, gameId=1, rating=9)]
+2024-08-02T16:33:07.744+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-6] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:33:13.799+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : DELETE "/api/v1/games/1/comments/6", parameters={}
+2024-08-02T16:33:13.800+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-7] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameCommentController#deleteComment(Long, Long)
+2024-08-02T16:33:13.813+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:33:13.813+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-7] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2024-08-02T16:33:13.814+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-7] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
+2024-08-02T16:33:19.320+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : DELETE "/api/v1/games/1/ratings/6", parameters={}
+2024-08-02T16:33:19.320+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-8] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameRatingController#deleteRating(Long, Long)
+2024-08-02T16:33:19.336+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:33:19.337+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-8] o.s.w.s.m.m.a.HttpEntityMethodProcessor  : Nothing to write: null body
+2024-08-02T16:33:19.337+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-8] o.s.web.servlet.DispatcherServlet        : Completed 204 NO_CONTENT
+2024-08-02T16:33:23.654+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/games/1/comments", parameters={}
+2024-08-02T16:33:23.654+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-9] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameCommentController#getAllComments(Long)
+2024-08-02T16:33:23.660+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:33:23.660+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-9] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameCommentDto(id=3, userId=1, gameId=1, content=어렸을 때 많이 했던 게임이다!), GameCommentDto(id=4, userId=1, (truncated)...]
+2024-08-02T16:33:23.662+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-9] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:33:27.477+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : GET "/api/v1/games/1/ratings", parameters={}
+2024-08-02T16:33:27.477+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-10] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped to com.example.gamemate.domain.game.controller.GameRatingController#getAllRatings(Long)
+2024-08-02T16:33:27.484+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Using 'application/json', given [*/*] and supported [application/json, application/*+json, application/xml;charset=UTF-8, text/xml;charset=UTF-8, application/*+xml;charset=UTF-8]
+2024-08-02T16:33:27.485+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-10] m.m.a.RequestResponseBodyMethodProcessor : Writing [[GameRatingDto(id=2, userId=1, gameId=1, rating=8), GameRatingDto(id=3, userId=1, gameId=1, rating=9 (truncated)...]
+2024-08-02T16:33:27.485+09:00 DEBUG 29352 --- [gamemate] [http-nio-8080-exec-10] o.s.web.servlet.DispatcherServlet        : Completed 200 OK
+2024-08-02T16:33:52.577+09:00  INFO 29352 --- [gamemate] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T16:33:52.579+09:00  INFO 29352 --- [gamemate] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-02T16:33:52.585+09:00  INFO 29352 --- [gamemate] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

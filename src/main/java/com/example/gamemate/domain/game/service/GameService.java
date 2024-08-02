@@ -11,6 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.io.IOException;
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -101,6 +102,8 @@ public class GameService {
     }
 
     public void deleteGame(Long id) {
-        gameRepository.deleteById(id);
+        Game game = gameRepository.findById(id).orElseThrow(() -> new RuntimeException("Game not found"));
+        game.setDeletedDate(LocalDateTime.now()); // 현재 시간을 삭제 날짜로 설정
+        gameRepository.save(game); // 삭제된 것으로 마킹 후 저장
     }
 }

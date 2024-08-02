@@ -46,29 +46,34 @@ public class GameController {
         return "Games fetched and saved successfully";
     }
 
+    //게임리스트 페이지(유저), 관리자 페이지
     @GetMapping("/games")
     public List<GameDto> getAllGames() {
         return gameService.getAllGames();
     }
 
+    //게임 상세 페이지
     @GetMapping("/games/{id}")
     public ResponseEntity<GameDto> getGameById(@PathVariable Long id) {
         GameDto gameDto = gameService.getGameById(id);
         return ResponseEntity.ok(gameDto);
     }
 
+    //관리자 페이지
     @PostMapping("/games")
     public ResponseEntity<GameDto> createGame(@RequestBody GameDto gameDto) {
         GameDto newGame = gameService.createGame(gameDto);
         return ResponseEntity.ok(newGame);
     }
 
+    //관리자 페이지
     @PutMapping("/games/{id}")
     public ResponseEntity<GameDto> updateGame(@PathVariable Long id, @RequestBody GameDto gameDto) {
         GameDto updatedGame = gameService.updateGame(id, gameDto);
         return ResponseEntity.ok(updatedGame);
     }
 
+    //관리자 페이지
     @DeleteMapping("/games/{id}")
     public ResponseEntity<Void> deleteGame(@PathVariable Long id) {
         gameService.deleteGame(id);

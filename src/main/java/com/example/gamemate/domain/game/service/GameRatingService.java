@@ -9,6 +9,7 @@ import com.example.gamemate.domain.game.repository.GameRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -25,12 +26,12 @@ public class GameRatingService {
     private GameRepository gameRepository;
 
     public List<GameRatingDto> getAllRatings(Long gameId) {
-        List<GameRating> ratings = gameRatingRepository.findByGameId(gameId);
+        List<GameRating> ratings = gameRatingRepository.findByGameIdAndDeletedDateIsNull(gameId);
         return ratings.stream().map(gameRatingMapper::toDto).collect(Collectors.toList());
     }
 
     public GameRatingDto getRatingById(Long gameId, Long ratingId) {
-        GameRating rating = gameRatingRepository.findByGameIdAndId(gameId, ratingId)
+        GameRating rating = gameRatingRepository.findByGameIdAndIdAndDeletedDateIsNull(gameId, ratingId)
                 .orElseThrow(() -> new RuntimeException("Rating not found"));
         return gameRatingMapper.toDto(rating);
     }
@@ -40,13 +41,13 @@ public class GameRatingService {
                 .orElseThrow(() -> new RuntimeException("Game not found"));
 
         GameRating rating = gameRatingMapper.toEntity(ratingDto);
-        rating.setGame(game); // gameId 대신 game 객체 설정
+        rating.setGame(game);
         GameRating savedRating = gameRatingRepository.save(rating);
         return gameRatingMapper.toDto(savedRating);
     }
 
     public GameRatingDto updateRating(Long gameId, Long ratingId, GameRatingDto ratingDto) {
-        GameRating rating = gameRatingRepository.findByGameIdAndId(gameId, ratingId)
+        GameRating rating = gameRatingRepository.findByGameIdAndIdAndDeletedDateIsNull(gameId, ratingId)
                 .orElseThrow(() -> new RuntimeException("Rating not found"));
         gameRatingMapper.updateEntityFromDto(ratingDto, rating);
         GameRating updatedRating = gameRatingRepository.save(rating);
@@ -54,6 +55,9 @@ public class GameRatingService {
     }
 
     public void deleteRating(Long gameId, Long ratingId) {
-        gameRatingRepository.deleteByGameIdAndId(gameId, ratingId);
+        GameRating rating = gameRatingRepository.findByGameIdAndIdAndDeletedDateIsNull(gameId, ratingId)
+                .orElseThrow(() -> new RuntimeException("Rating not found"));
+        rating.setDeletedDate(LocalDateTime.now()); // Soft delete 처리
+        gameRatingRepository.save(rating);
     }
 }

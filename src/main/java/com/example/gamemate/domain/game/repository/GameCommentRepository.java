@@ -9,7 +9,6 @@ import java.util.Optional;
 
 @Repository
 public interface GameCommentRepository extends JpaRepository<GameComment, Long> {
-    List<GameComment> findByGameId(Long gameId);
-    Optional<GameComment> findByGameIdAndId(Long gameId, Long commentId);
-    void deleteByGameIdAndId(Long gameId, Long commentId);
+    List<GameComment> findByGameIdAndDeletedDateIsNull(Long gameId);
+    Optional<GameComment> findByGameIdAndIdAndDeletedDateIsNull(Long gameId, Long commentId);
 }
