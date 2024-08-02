@@ -75,20 +75,32 @@ public class PostCommentService {
         postRepository.findById(postId)
                 .orElseThrow(() -> new RestApiException(PostExceptionCode.POST_NOT_FOUND));
 
+        postCommentRepository.findById(commentId)
+                .orElseThrow(() -> new RestApiException(PostExceptionCode.COMMENT_NOT_FOUND));
 
-        //대댓글 삭제
+        Long pCommentId = postCommentRepository.getPCommentId(commentId);
+
+        /*
+        대댓글 삭제
+         */
         if(postCommentRepository.isRecomment(commentId)){
-            postCommentRepository.deleteById(commentId);
 
-            Long pCommentId = postCommentRepository.getPCommentId(commentId);
-
-            if(!postCommentRepository.hasRecomments(pCommentId)
+            //대댓글의 원댓글이 삭제된 상태이고, 삭제할 대댓글이 마지막 대댓글인 경우
+            if(postCommentRepository.hasRecomments(pCommentId)== 1
                     && postCommentRepository.isParentCommentDeleted(pCommentId)){
 
+                //대댓글, 원댓글 모두 삭제
+                postCommentRepository.deleteById(commentId);
                 postCommentRepository.deleteById(pCommentId);
-
+            }else {
+                //대댓글만 삭제
+                postCommentRepository.deleteById(commentId);
             }
-        }else if(!postCommentRepository.hasRecomments(commentId)){
+
+         /*
+           대댓글 삭제
+          */
+        }else if(postCommentRepository.hasRecomments(commentId) == 0){
             postCommentRepository.deleteById(commentId);
         }else{
             //대댓글이 존재하는 경우 삭제된 메시지로 표시

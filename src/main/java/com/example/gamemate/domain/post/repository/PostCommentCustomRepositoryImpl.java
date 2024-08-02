@@ -38,7 +38,7 @@ public class PostCommentCustomRepositoryImpl implements PostCommentCustomReposit
     }
 
     @Override
-    public boolean hasRecomments(Long commentId) {
+    public Long hasRecomments(Long commentId) {
 
         Long count = jpaQueryFactory
                 .select(postComment.id.count())
@@ -46,24 +46,22 @@ public class PostCommentCustomRepositoryImpl implements PostCommentCustomReposit
                 .where(postComment.parentComment.id.eq(commentId))
                 .fetchOne();
 
-        return count != null && count > 0; //대댓글이 존재하면 true, 댓글만 있으면 false
+        return count; //대댓글이 존재하면 true, 댓글만 있으면 false
     }
 
 
     //부모 댓글이 삭제되었는지 확인
     @Override
-    public boolean isParentCommentDeleted(Long recommentId) {
-
-        Long pCommentId = getPCommentId(recommentId);
+    public boolean isParentCommentDeleted(Long commentId) {
 
         //부모 댓글의 deletedDate가 null인지 확인
-        if(pCommentId != null){
+        if(commentId != null){
 
             try{
                 LocalDateTime deletedDate = jpaQueryFactory
                         .select(postComment.deletedDate)
                         .from(postComment)
-                        .where(postComment.id.eq(pCommentId))
+                        .where(postComment.id.eq(commentId))
                         .fetchOne();
 
                 return deletedDate != null;

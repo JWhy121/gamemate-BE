@@ -10,8 +10,7 @@ public interface PostCommentCustomRepository {
 
     boolean isRecomment(Long commentId);
 
-    boolean
-    hasRecomments(Long commentId);
+    Long hasRecomments(Long commentId);
 
     boolean isParentCommentDeleted(Long recommentId);
 
