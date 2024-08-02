@@ -57,5 +57,9 @@ public class FriendService {
                 .orElseThrow(() -> new IllegalArgumentException("Invalid user ID"));
         return friendRepository.findByRequesterOrReceiver(user, user);
     }
+
+    public List<Friend> getFriendsByStatus(Long userId, Friend.Status status) {
+        return friendRepository.findFriendsByStatus(userId, status);
+    }
 }
 

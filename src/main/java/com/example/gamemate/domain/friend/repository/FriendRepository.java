@@ -9,6 +9,6 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 @Repository
-public interface FriendRepository extends JpaRepository<Friend, FriendId> {
+public interface FriendRepository extends JpaRepository<Friend, FriendId>, FriendRepositoryCustom {
     List<Friend> findByRequesterOrReceiver(User requester, User receiver);
 }

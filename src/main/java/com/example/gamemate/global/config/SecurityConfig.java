@@ -8,6 +8,7 @@ import java.util.Collections;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
@@ -103,4 +104,17 @@ public class SecurityConfig {
         return http.build();
 
     }
+
+    @Bean
+    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
+        http
+                .csrf(csrf -> csrf.disable()) // CSRF 보호 비활성화
+                .authorizeHttpRequests(authorize -> authorize
+                        .requestMatchers("/friend/**").permitAll() // /friend/** 경로에 대한 접근 허용
+                        .anyRequest().authenticated() // 다른 모든 요청은 인증 필요
+                )
+                .httpBasic(Customizer.withDefaults()); // 기본 인증 방식 사용
+        return http.build();
+    }
 }
+

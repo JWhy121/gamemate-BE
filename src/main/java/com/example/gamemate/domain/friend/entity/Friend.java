@@ -31,6 +31,6 @@ public class Friend {
     private Status status;
 
     public enum Status {
-        PENDING, ACCEPTED, REJECTED, BLOCKED
+        PENDING, ACCEPTED, REJECTED
     }
 }
