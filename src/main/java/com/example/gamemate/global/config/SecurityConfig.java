@@ -3,6 +3,7 @@ package com.example.gamemate.global.config;
 import com.example.gamemate.domain.auth.jwt.JWTUtil;
 import com.example.gamemate.domain.auth.jwt.filter.JWTFilter;
 import com.example.gamemate.domain.auth.jwt.filter.LoginFilter;
+import com.example.gamemate.domain.user.service.CustomUserDetailsService;
 import jakarta.servlet.http.HttpServletRequest;
 import java.util.Collections;
 import org.springframework.context.annotation.Bean;
@@ -12,6 +13,7 @@ import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
@@ -25,14 +27,15 @@ public class SecurityConfig {
 
     //AuthenticationManager가 인자로 받을 AuthenticationConfiguration 객체 생성자 주입
     private final AuthenticationConfiguration authenticationConfiguration;
-
     //JWTUtil 주입
     private final JWTUtil jwtUtil;
+    private final CustomUserDetailsService customUserDetailsService;
 
-    public SecurityConfig(AuthenticationConfiguration authenticationConfiguration, JWTUtil jwtUtil) {
+    public SecurityConfig(AuthenticationConfiguration authenticationConfiguration, JWTUtil jwtUtil, CustomUserDetailsService customUserDetailsService) {
 
         this.authenticationConfiguration = authenticationConfiguration;
         this.jwtUtil = jwtUtil;
+        this.customUserDetailsService = customUserDetailsService;
 
     }
 
@@ -55,13 +58,13 @@ public class SecurityConfig {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
         //csrf disable
-        http.csrf((auth) -> auth.disable())
+        http.csrf(AbstractHttpConfigurer::disable)
 
             //Form 로그인 방식 disable
-            .formLogin((auth) -> auth.disable())
+            .formLogin(AbstractHttpConfigurer::disable)
 
             //http basic 인증 방식 disable
-            .httpBasic((auth) -> auth.disable())
+            .httpBasic(AbstractHttpConfigurer::disable)
 
             //경로별 인가 작업
             .authorizeHttpRequests((auth) -> auth
@@ -73,8 +76,8 @@ public class SecurityConfig {
 
             //필터 추가
             //AuthenticationManager() 메소드에 authenticationConfiguration 객체를 넣어야 함
-            //AuthenticationManager()와 JWTUtil 인수 전달
-            .addFilterAt(new LoginFilter(authenticationManager(authenticationConfiguration), jwtUtil), UsernamePasswordAuthenticationFilter.class)
+            //AuthenticationManager()와 JWTUtil, customUserDetailsService, bCryptPasswordEncoder() 인수 전달
+            .addFilterAt(new LoginFilter(authenticationManager(authenticationConfiguration), jwtUtil, customUserDetailsService, bCryptPasswordEncoder()), UsernamePasswordAuthenticationFilter.class)
 
             //세션 설정
             //JWT를 통한 인증/인가를 위해 세션을 STATELESS 상태로 설정

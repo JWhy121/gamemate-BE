@@ -1,4 +1,4 @@
-package com.example.gamemate.domain.auth.service;
+package com.example.gamemate.domain.user.service;
 
 import com.example.gamemate.domain.user.entity.User;
 import com.example.gamemate.domain.auth.dto.CustomUserDetailsDTO;
