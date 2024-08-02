@@ -2,7 +2,9 @@ package com.example.gamemate.domain.post.repository;
 
 import com.example.gamemate.domain.post.entity.PostComment;
 import com.querydsl.jpa.impl.JPAQueryFactory;
+import org.springframework.cglib.core.Local;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import static com.example.gamemate.domain.post.entity.QPostComment.postComment;
@@ -22,4 +24,69 @@ public class PostCommentCustomRepositoryImpl implements PostCommentCustomReposit
                         .and(postComment.parentComment.isNull()))
                 .fetch();
     }
+
+    @Override
+    public boolean isRecomment(Long commentId) {
+
+        Boolean exists = jpaQueryFactory
+                .select(postComment.parentComment.isNotNull())
+                .from(postComment)
+                .where(postComment.id.eq(commentId))
+                .fetchOne();
+
+        return exists != null && exists; //commentId가 존재하지 않는 경우도 고려
+    }
+
+    @Override
+    public boolean hasRecomments(Long commentId) {
+
+        Long count = jpaQueryFactory
+                .select(postComment.id.count())
+                .from(postComment)
+                .where(postComment.parentComment.id.eq(commentId))
+                .fetchOne();
+
+        return count != null && count > 0; //대댓글이 존재하면 true, 댓글만 있으면 false
+    }
+
+
+    //부모 댓글이 삭제되었는지 확인
+    @Override
+    public boolean isParentCommentDeleted(Long recommentId) {
+
+        Long pCommentId = getPCommentId(recommentId);
+
+        //부모 댓글의 deletedDate가 null인지 확인
+        if(pCommentId != null){
+
+            try{
+                LocalDateTime deletedDate = jpaQueryFactory
+                        .select(postComment.deletedDate)
+                        .from(postComment)
+                        .where(postComment.id.eq(pCommentId))
+                        .fetchOne();
+
+                return deletedDate != null;
+            }
+         catch (Exception e) {
+            // 로그를 통해 오류 확인
+            System.err.println("Error fetching deletedDate: " + e.getMessage());
+            return false;
+            }
+        }
+        return false;
+    }
+
+    //대댓글의 부모 id 반환
+    @Override
+    public Long getPCommentId(Long recommentId) {
+
+        return jpaQueryFactory
+                .select(postComment.parentComment.id)
+                .from(postComment)
+                .where(postComment.id.eq(recommentId))
+                .fetchOne();
+    }
+
+
 }

@@ -5,6 +5,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Getter
@@ -33,7 +34,10 @@ public class PostComment extends BaseEntity {
     @Column(nullable = false)
     private String content;
 
-    @OneToMany(mappedBy = "parentComment", cascade = CascadeType.REMOVE, fetch = FetchType.LAZY)
+    @Column
+    private LocalDateTime deletedDate;
+
+    @OneToMany(mappedBy = "parentComment", fetch = FetchType.LAZY)
     private List<PostComment> reComments;
 
     @Builder
@@ -43,6 +47,15 @@ public class PostComment extends BaseEntity {
         this.nickname = nickname;
         this.content = content;
 
+    }
+
+    public void updateComment(String content){
+        this.content = content;
+    }
+
+    public void deleteComment(LocalDateTime deletedDate, String content){
+        this.deletedDate = deletedDate;
+        this.content = content;
     }
 
 }

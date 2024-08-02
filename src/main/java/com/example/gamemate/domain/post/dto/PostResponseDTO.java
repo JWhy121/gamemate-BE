@@ -1,8 +1,6 @@
 package com.example.gamemate.domain.post.dto;
 
 import com.example.gamemate.domain.post.entity.Post;
-import com.example.gamemate.domain.post.entity.PostComment;
-import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 
@@ -22,7 +20,7 @@ public class PostResponseDTO {
     private String mateRegionGu;
     private BigDecimal latitude;
     private BigDecimal longitude;
-    private List<PostCommentResponseDTO> postComments;
+    private List<PostCommentsResponseDTO> postComments;
 
 
     public PostResponseDTO(Post post) {
@@ -41,7 +39,7 @@ public class PostResponseDTO {
 
     @Builder
     public PostResponseDTO(String status, String gameTitle, String gameGenre, Long userId, Integer mateCnt, String mateContent,
-                           String mateRegionSi, String mateRegionGu, BigDecimal latitude, BigDecimal longitude, List<PostCommentResponseDTO> postComments){
+                           String mateRegionSi, String mateRegionGu, BigDecimal latitude, BigDecimal longitude, List<PostCommentsResponseDTO> postComments){
         this.status = status;
         this.gameTitle = gameTitle;
         this.gameGenre = gameGenre;

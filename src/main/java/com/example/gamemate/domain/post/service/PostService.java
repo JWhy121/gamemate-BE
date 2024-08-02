@@ -63,8 +63,8 @@ public class PostService {
         System.out.println(parentComments);
 
         //댓글 응답 DTO로 변환
-        List<PostCommentResponseDTO> postCommentDto = parentComments.stream()
-                .map(postComment -> PostCommentResponseDTO.builder()
+        List<PostCommentsResponseDTO> postCommentDto = parentComments.stream()
+                .map(postComment -> PostCommentsResponseDTO.builder()
                         .id(postComment.getId())
                         .nickname(postComment.getNickname())
                         .content(postComment.getContent())
@@ -89,9 +89,10 @@ public class PostService {
                 .build();
     }
 
-    private List<RecommentResponseDTO> getRecomments(PostComment parentComment){
+    //게시글 댓글 조회
+    private List<RecommentsResponseDTO> getRecomments(PostComment parentComment){
         return parentComment.getReComments().stream()
-                .map(recomment -> RecommentResponseDTO.builder()
+                .map(recomment -> RecommentsResponseDTO.builder()
                         .id(recomment.getId())
                         .nickname(recomment.getNickname())
                         .content(recomment.getContent())
@@ -113,18 +114,32 @@ public class PostService {
         }
     }
 
-    public PostResponseDTO updatePost(Long id, PostDTO postDTO){
+    //게시글 수정
+    public PostResponseDTO updatePost(Long id, PostUpdateDTO postUpdateDTO){
 
-        if (postDTO.getStatus().equals("ON")){
+        if (postUpdateDTO.getStatus().equals("ON")){
+
             return postRepository.findById(id)
                     .map(existingPost -> {
-                        existingPost.updatePost(postDTO.getMateCnt(), postDTO.getMateContent());
+                        existingPost.updateOnlinePost(postUpdateDTO.getMateCnt(), postUpdateDTO.getMateContent());
 
                         Post updatedPost = postRepository.save(existingPost);
                         return mapper.PostToOfflinePostResponse(updatedPost);
                     })
                     .orElseThrow(() -> new IllegalStateException("Post with id " + id + "does note exist"));
-        }else throw new IllegalArgumentException("잘못된 접근");
+        } else if (postUpdateDTO.getStatus().equals("OFF")){
+            return postRepository.findById(id)
+                    .map(existingPost -> {
+                        existingPost.updateOfflinePost(postUpdateDTO.getMateCnt(), postUpdateDTO.getMateContent(),
+                                postUpdateDTO.getMateRegionSi(), postUpdateDTO.getMateResionGu(),
+                                postUpdateDTO.getLatitude(), postUpdateDTO.getLongitude());
+
+                        Post updatedPost = postRepository.save(existingPost);
+                        return mapper.PostToOfflinePostResponse(updatedPost);
+                    })
+                    .orElseThrow(() -> new IllegalStateException("Post with id " + id + "does note exist"));
+        }
+        else throw new IllegalArgumentException("잘못된 접근");
     }
 
 

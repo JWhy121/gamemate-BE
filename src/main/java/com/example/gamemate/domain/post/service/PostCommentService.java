@@ -3,26 +3,31 @@ package com.example.gamemate.domain.post.service;
 import com.example.gamemate.domain.post.entity.Post;
 import com.example.gamemate.domain.post.entity.PostComment;
 import com.example.gamemate.domain.post.dto.PostCommentDTO;
+import com.example.gamemate.domain.post.mapper.PostCommentMapper;
+import com.example.gamemate.domain.post.mapper.PostMapper;
 import com.example.gamemate.domain.post.repository.PostCommentRepository;
 import com.example.gamemate.domain.post.repository.PostRepository;
 import com.example.gamemate.global.exception.PostExceptionCode;
 import com.example.gamemate.global.exception.RestApiException;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
 public class PostCommentService {
 
     private final PostCommentRepository postCommentRepository;
-
     private final PostRepository postRepository;
+    private final PostCommentMapper mapper;
 
-    public PostCommentService(PostCommentRepository postCommentRepository, PostRepository postRepository) {
+    public PostCommentService(PostCommentRepository postCommentRepository, PostRepository postRepository, PostCommentMapper mapper) {
         this.postCommentRepository = postCommentRepository;
         this.postRepository = postRepository;
+        this.mapper = mapper;
     }
 
+    //게시글 댓글 생성
     public void createPostComment(Long id, PostCommentDTO postCommentDTO){
 
         Post post = postRepository.findById(id)
@@ -49,10 +54,50 @@ public class PostCommentService {
         postCommentRepository.save(postComment);
     }
 
-    public List<PostComment> test(Long id){
+    //게시글 댓글 수정
+    public void updateComment(Long postId, Long commentId, PostCommentDTO postCommentDTO){
 
-        List<PostComment> post = postCommentRepository.findByidAndParentCommentIsNull(id);
+        postRepository.findById(postId)
+                .orElseThrow(() -> new RestApiException(PostExceptionCode.POST_NOT_FOUND));
 
-        return post;
+        postCommentRepository.findById(commentId)
+                .map(existingPostComment -> {
+                    existingPostComment.updateComment(postCommentDTO.getContent());
+
+                    PostComment updatedPostComment = postCommentRepository.save(existingPostComment);
+                    return mapper.postCommentToPostCommentResponseDTO(updatedPostComment);
+                })
+                .orElseThrow(() -> new IllegalStateException("PostComment with id " + commentId + "does note exist"));
+    }
+
+    //게시글 댓글 삭제
+    public void deleteComment(Long postId, Long commentId){
+        postRepository.findById(postId)
+                .orElseThrow(() -> new RestApiException(PostExceptionCode.POST_NOT_FOUND));
+
+
+        //대댓글 삭제
+        if(postCommentRepository.isRecomment(commentId)){
+            postCommentRepository.deleteById(commentId);
+
+            Long pCommentId = postCommentRepository.getPCommentId(commentId);
+
+            if(!postCommentRepository.hasRecomments(pCommentId)
+                    && postCommentRepository.isParentCommentDeleted(pCommentId)){
+
+                postCommentRepository.deleteById(pCommentId);
+
+            }
+        }else if(!postCommentRepository.hasRecomments(commentId)){
+            postCommentRepository.deleteById(commentId);
+        }else{
+            //대댓글이 존재하는 경우 삭제된 메시지로 표시
+            postCommentRepository.findById(commentId)
+                    .ifPresent(existingPostComment -> {
+
+                        existingPostComment.deleteComment(LocalDateTime.now(), "삭제된 댓글입니다.");
+                        postCommentRepository.save(existingPostComment);
+                    });
+        }
     }
 }

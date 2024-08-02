@@ -2,6 +2,7 @@ package com.example.gamemate.domain.post.controller;
 
 
 import com.example.gamemate.domain.post.dto.PostDTO;
+import com.example.gamemate.domain.post.dto.PostUpdateDTO;
 import com.example.gamemate.domain.post.entity.Post;
 import com.example.gamemate.domain.post.dto.PostResponseDTO;
 import com.example.gamemate.domain.post.entity.PostComment;
@@ -55,20 +56,19 @@ public class PostController {
     }
 
     //글 작성 api
-    @PostMapping("/post/create")
+    @PostMapping("/post")
     public ResponseEntity<Object> registerPost(@Valid @RequestBody PostDTO postDTO){
 
         postService.createPost(postDTO);
 
-        // 생성된 게시글 정보 반환
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
     //글 수정 api
     @PutMapping("/post/{id}")
-    public ResponseEntity<Object> editPost(@PathVariable Long id, @Valid @RequestBody PostDTO postDTO){
+    public ResponseEntity<Object> editPost(@PathVariable Long id, @Valid @RequestBody PostUpdateDTO postUpdateDTO){
 
-        postService.updatePost(id, postDTO);
+        postService.updatePost(id, postUpdateDTO);
 
         return ResponseEntity.ok().build();
     }

@@ -13,7 +13,7 @@ import org.springframework.http.HttpStatus;
 public enum PostExceptionCode implements ExceptionCode {
 
     POST_NOT_FOUND(HttpStatus.NOT_FOUND, "Post does not exist"),
-    COMMENT_NOT_FOUND(HttpStatus.NOT_FOUND, "ParentComment does not exist"),
+    COMMENT_NOT_FOUND(HttpStatus.NOT_FOUND, "Comment does not exist"),
     ;
 
     private final HttpStatus httpStatus;

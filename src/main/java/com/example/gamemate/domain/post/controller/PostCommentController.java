@@ -23,18 +23,24 @@ public class PostCommentController {
     //게시글 댓글 작성 api
     @PostMapping("/post/{id}/comment")
     public ResponseEntity<Object> registerPostComment(@PathVariable Long id, @RequestBody PostCommentDTO postCommentDTO){
-
-        System.out.println(postCommentDTO.getPCommentId());
-
         postCommentService.createPostComment(id, postCommentDTO);
         return ResponseEntity.ok().build();
     }
 
-    @GetMapping("/test")
-    public ResponseEntity<Object> test(){
-
-        List<PostComment> offlinePosts = postCommentService.test(1L);
-
-        return ResponseEntity.ok(offlinePosts);
+    //게시글 댓글 수정 api
+    @PutMapping("/post/{postId}/comment/{commentId}")
+    public ResponseEntity<Object> editComment(@PathVariable Long postId, Long commentId, @RequestBody PostCommentDTO postCommentDTO){
+        postCommentService.updateComment(postId, commentId, postCommentDTO);
+        return ResponseEntity.ok().build();
     }
+
+
+    //게시글 댓글 삭제 api
+    @DeleteMapping("/post/{postId}/comment/{commentId}")
+    public ResponseEntity<Object> removeComment(@PathVariable Long postId, Long commentId){
+        postCommentService.deleteComment(postId, commentId);
+
+        return ResponseEntity.ok().build();
+    }
+
 }

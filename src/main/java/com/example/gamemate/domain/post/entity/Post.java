@@ -6,6 +6,7 @@ import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -53,7 +54,10 @@ public class Post extends BaseEntity {
     @Column
     private BigDecimal longitude;
 
-    @OneToMany(mappedBy = "post", cascade = CascadeType.REMOVE, orphanRemoval = true)
+    @Column
+    private LocalDateTime deletedDate;
+
+    @OneToMany(mappedBy = "post")
     private List<PostComment> postComments = new ArrayList<>();
 
     public enum OnOffStatus {
@@ -61,9 +65,18 @@ public class Post extends BaseEntity {
         OFF  // 오프라인
     }
 
-    public void updatePost(Integer mateCnt, String mateContent){
+    public void updateOnlinePost(Integer mateCnt, String mateContent){
         this.mateCnt = mateCnt;
         this.mateContent = mateContent;
+    }
+
+    public void updateOfflinePost(Integer mateCnt, String mateContent, String mateRegionSi, String mateRegionGu, BigDecimal latitude, BigDecimal longitude){
+        this.mateCnt = mateCnt;
+        this.mateContent = mateContent;
+        this.mateRegionGu = mateRegionGu;
+        this.mateRegionSi = mateRegionSi;
+        this.latitude = latitude;
+        this.longitude = longitude;
     }
 
     @Builder
