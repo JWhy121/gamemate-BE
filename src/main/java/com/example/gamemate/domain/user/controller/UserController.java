@@ -34,17 +34,14 @@ public class UserController {
         String role = customUserDetailsDTO.getAuthorities().iterator().next().getAuthority();
 
         // 역할 확인 및 로깅
-        log.info("User role: {}", role);
-        log.info("Accessing mypage");
+//        log.info("User role: {}", role);
+//        log.info("Accessing mypage");
+        System.out.println(role);
+        System.out.println("mypage");
 
-        MyPageResponseDTO myPageDto;
-        try {
-            myPageDto = userService.findByUsername(name);
-        } catch (UsernameNotFoundException e) {
-            return ResponseEntity.status(HttpStatus.NOT_FOUND).body(null);
-        }
+        MyPageResponseDTO myPageDto = userService.findByUsername(name);
 
-        return ResponseEntity.ok(myPageDto);
+        return ResponseEntity.ok().header("Content-Type", "application/json").body(myPageDto);
     }
 
 }

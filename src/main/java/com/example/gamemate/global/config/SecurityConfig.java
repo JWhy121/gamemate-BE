@@ -85,7 +85,7 @@ public class SecurityConfig {
                 .sessionCreationPolicy(SessionCreationPolicy.STATELESS))
 
             //oauth2
-            .oauth2Login(Customizer.withDefaults())
+//            .oauth2Login(Customizer.withDefaults())
 
             //cors 설정
             .cors((cors -> cors.configurationSource(new CorsConfigurationSource() {
