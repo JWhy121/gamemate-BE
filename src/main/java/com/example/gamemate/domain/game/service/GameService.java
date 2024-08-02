@@ -3,6 +3,7 @@ package com.example.gamemate.domain.game.service;
 import com.example.gamemate.domain.game.dto.GameApiResponse;
 import com.example.gamemate.domain.game.dto.GameDto;
 import com.example.gamemate.domain.game.entity.Game;
+import com.example.gamemate.domain.game.mapper.GameMapper;
 import com.example.gamemate.domain.game.repository.GameRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.slf4j.Logger;
@@ -28,6 +29,9 @@ public class GameService {
 
     @Autowired
     private ObjectMapper objectMapper;
+
+    @Autowired
+    private GameMapper gameMapper;
 
     public void fetchAndSaveGames(String gametitle, String entname, String rateno, String startdate, String enddate, int display, int pageno) {
         // 외부 API를 호출하여 게임 정보를 가져옴
@@ -67,14 +71,15 @@ public class GameService {
     }
 
     public List<GameDto> getAllGames() {
-        return gameRepository.findAll().stream().map(game -> new GameDto(
-                game.getId(), game.getTitle(), game.getDeveloper(), game.getDescription(), game.getClasses(), game.getGenre(), game.getPlatform()
-        )).collect(Collectors.toList());
+        return gameRepository.findAllByDeletedDateIsNull().stream()
+                .map(gameMapper::toDto)
+                .collect(Collectors.toList());
     }
 
     public GameDto getGameById(Long id) {
-        Game game = gameRepository.findById(id).orElseThrow(() -> new RuntimeException("Game not found"));
-        return new GameDto(game.getId(), game.getTitle(), game.getDeveloper(), game.getDescription(), game.getClasses(), game.getGenre(), game.getPlatform());
+        Game game = gameRepository.findByIdAndDeletedDateIsNull(id)
+                .orElseThrow(() -> new RuntimeException("Game not found"));
+        return gameMapper.toDto(game);
     }
 
     public GameDto createGame(GameDto gameDto) {
@@ -102,8 +107,10 @@ public class GameService {
     }
 
     public void deleteGame(Long id) {
-        Game game = gameRepository.findById(id).orElseThrow(() -> new RuntimeException("Game not found"));
-        game.setDeletedDate(LocalDateTime.now()); // 현재 시간을 삭제 날짜로 설정
-        gameRepository.save(game); // 삭제된 것으로 마킹 후 저장
+        Game game = gameRepository.findByIdAndDeletedDateIsNull(id)
+                .orElseThrow(() -> new RuntimeException("Game not found"));
+        game.setDeletedDate(LocalDateTime.now());
+        gameRepository.save(game);
     }
+
 }
