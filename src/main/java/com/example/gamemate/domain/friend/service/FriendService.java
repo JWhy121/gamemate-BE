@@ -2,16 +2,17 @@ package com.example.gamemate.domain.friend.service;
 
 import com.example.gamemate.domain.friend.dto.FriendPostDto;
 import com.example.gamemate.domain.friend.dto.FriendPutDto;
-import com.example.gamemate.domain.friend.dto.FriendRequestDto;
+import com.example.gamemate.domain.friend.dto.FriendResponseDto;
+import com.example.gamemate.domain.user.entity.User;
 import com.example.gamemate.domain.friend.entity.Friend;
 import com.example.gamemate.domain.friend.entity.FriendId;
 import com.example.gamemate.domain.friend.repository.FriendRepository;
-import com.example.gamemate.domain.user.entity.User;
 import com.example.gamemate.domain.user.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class FriendService {
@@ -25,27 +26,20 @@ public class FriendService {
         this.userRepository = userRepository;
     }
 
-    public FriendRequestDto sendFriendRequest(FriendPostDto friendPostDto) {
+    public FriendResponseDto sendFriendRequest(FriendPostDto friendPostDto) {
         User requester = userRepository.findById(friendPostDto.getRequesterId())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid requester ID"));
         User receiver = userRepository.findById(friendPostDto.getReceiverId())
                 .orElseThrow(() -> new IllegalArgumentException("Invalid receiver ID"));
 
-        Friend existingFriend = friendRepository.findById(new FriendId(requester.getId(), receiver.getId())).orElse(null);
-        if (existingFriend != null) {
-            if (existingFriend.getStatus() == Friend.Status.ACCEPTED) {
-                return new FriendRequestDto("이미 친구인 유저입니다.", Friend.Status.ACCEPTED, requester, receiver);
-            } else if (existingFriend.getStatus() == Friend.Status.PENDING) {
-                return new FriendRequestDto("친구 요청이 와있는 대상입니다.", Friend.Status.PENDING, requester, receiver);
-            }
-        }
+        Optional<Friend> existingFriend = friendRepository.findFriendRelationship(requester.getId(), receiver.getId());
 
-        Friend reverseFriend = friendRepository.findById(new FriendId(receiver.getId(), requester.getId())).orElse(null);
-        if (reverseFriend != null) {
-            if (reverseFriend.getStatus() == Friend.Status.ACCEPTED) {
-                return new FriendRequestDto("이미 친구인 유저입니다.", Friend.Status.ACCEPTED, requester, receiver);
-            } else if (reverseFriend.getStatus() == Friend.Status.PENDING) {
-                return new FriendRequestDto("친구 요청이 와있는 대상입니다.", Friend.Status.PENDING, requester, receiver);
+        if (existingFriend.isPresent()) {
+            Friend friend = existingFriend.get();
+            if (friend.getStatus() == Friend.Status.ACCEPTED) {
+                return new FriendResponseDto("이미 친구인 유저입니다.", Friend.Status.ACCEPTED, requester, receiver);
+            } else if (friend.getStatus() == Friend.Status.PENDING) {
+                return new FriendResponseDto("친구 요청이 와있는 대상입니다.", Friend.Status.PENDING, requester, receiver);
             }
         }
 
@@ -56,10 +50,10 @@ public class FriendService {
 
         friendRepository.save(friend);
 
-        return new FriendRequestDto("친구 요청이 완료되었습니다.", friend.getStatus(), requester, receiver);
+        return new FriendResponseDto("친구 요청이 완료되었습니다.", friend.getStatus(), requester, receiver);
     }
 
-    public FriendRequestDto respondToFriendRequest(FriendPutDto friendPutDto) {
+    public FriendResponseDto respondToFriendRequest(FriendPutDto friendPutDto) {
         FriendId friendId = new FriendId(friendPutDto.getRequesterId(), friendPutDto.getReceiverId());
         Friend friend = friendRepository.findById(friendId)
                 .orElseThrow(() -> new IllegalArgumentException("Invalid friend ID"));
@@ -67,13 +61,13 @@ public class FriendService {
         if (friendPutDto.getStatus() == Friend.Status.ACCEPTED) {
             friend.setStatus(Friend.Status.ACCEPTED);
             friendRepository.save(friend);
-            return new FriendRequestDto("친구 요청을 수락하였습니다.", friend.getStatus(), friend.getRequester(), friend.getReceiver());
+            return new FriendResponseDto("친구 요청을 수락하였습니다.", friend.getStatus(), friend.getRequester(), friend.getReceiver());
         } else if (friendPutDto.getStatus() == Friend.Status.REJECTED) {
             friendRepository.delete(friend);
-            return new FriendRequestDto("친구 요청을 거절하였습니다.", Friend.Status.REJECTED, friend.getRequester(), friend.getReceiver());
+            return new FriendResponseDto("친구 요청을 거절하였습니다.", Friend.Status.REJECTED, friend.getRequester(), friend.getReceiver());
         }
 
-        return new FriendRequestDto("잘못된 요청 상태입니다.", friend.getStatus(), friend.getRequester(), friend.getReceiver());
+        return new FriendResponseDto("잘못된 요청 상태입니다.", friend.getStatus(), friend.getRequester(), friend.getReceiver());
     }
 
     public List<User> getFriendsByStatus(Long userId, Friend.Status status) {
@@ -89,3 +83,4 @@ public class FriendService {
         return "친구 삭제가 완료되었습니다.";
     }
 }
+

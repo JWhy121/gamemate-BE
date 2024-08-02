@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+import java.util.Optional;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -51,4 +52,15 @@ public class FriendRepositoryCustomImpl implements FriendRepositoryCustom {
         return Stream.concat(friendsAsRequester.stream(), friendsAsReceiver.stream())
                 .collect(Collectors.toList());
     }
+
+    @Override
+    public Optional<Friend> findFriendRelationship(Long requesterId, Long receiverId) {
+        QFriend friend = QFriend.friend;
+
+        return Optional.ofNullable(queryFactory.selectFrom(friend)
+                .where(friend.requester.id.eq(requesterId).and(friend.receiver.id.eq(receiverId))
+                        .or(friend.requester.id.eq(receiverId).and(friend.receiver.id.eq(requesterId))))
+                .fetchOne());
+    }
 }
+
