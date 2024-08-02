@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/friend")
+@RequestMapping("/")
 @Tag(name = "Friend", description = "친구 관리 API")
 public class FriendController {
 
