@@ -1,6 +1,6 @@
-package com.example.gamemate.user.repository;
+package com.example.gamemate.domain.user.repository;
 
-import com.example.gamemate.user.User;
+import com.example.gamemate.domain.user.User;
 import java.util.Optional;
 import org.springframework.data.jpa.repository.JpaRepository;
 

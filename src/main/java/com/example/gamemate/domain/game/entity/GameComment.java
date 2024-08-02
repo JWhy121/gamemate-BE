@@ -1,6 +1,7 @@
-package com.example.gamemate.game;
+package com.example.gamemate.domain.game.entity;
 
-import com.example.gamemate.user.User;
+import com.example.gamemate.domain.user.User;
+import com.example.gamemate.global.audit.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -11,7 +12,7 @@ import lombok.*;
 @Setter
 @Builder
 @Entity
-public class GameComment {
+public class GameComment extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

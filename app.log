@@ -1,0 +1,105 @@
+2024-08-02T14:24:04.843+09:00  INFO 25096 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : Starting GamemateApplication using Java 17.0.10 with PID 25096 (C:\Users\user\gamemate\gamemate\build\classes\java\main started by user in C:\Users\user\gamemate\gamemate)
+2024-08-02T14:24:04.850+09:00 DEBUG 25096 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-02T14:24:04.851+09:00  INFO 25096 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T14:24:04.903+09:00  INFO 25096 --- [gamemate] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-02T14:24:04.903+09:00  INFO 25096 --- [gamemate] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-02T14:24:05.692+09:00  INFO 25096 --- [gamemate] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T14:24:05.843+09:00  INFO 25096 --- [gamemate] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 144 ms. Found 4 JPA repository interfaces.
+2024-08-02T14:24:06.374+09:00  INFO 25096 --- [gamemate] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T14:24:06.384+09:00  INFO 25096 --- [gamemate] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T14:24:06.384+09:00  INFO 25096 --- [gamemate] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T14:24:06.435+09:00  INFO 25096 --- [gamemate] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T14:24:06.436+09:00  INFO 25096 --- [gamemate] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1532 ms
+2024-08-02T14:24:06.569+09:00  INFO 25096 --- [gamemate] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T14:24:06.660+09:00  INFO 25096 --- [gamemate] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-02T14:24:06.707+09:00  INFO 25096 --- [gamemate] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T14:24:07.007+09:00  INFO 25096 --- [gamemate] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T14:24:07.034+09:00  INFO 25096 --- [gamemate] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-02T14:24:07.284+09:00  INFO 25096 --- [gamemate] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1a16e84f
+2024-08-02T14:24:07.286+09:00  INFO 25096 --- [gamemate] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-02T14:24:07.353+09:00  WARN 25096 --- [gamemate] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T14:24:07.354+09:00  WARN 25096 --- [gamemate] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T14:24:08.298+09:00  INFO 25096 --- [gamemate] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T14:24:08.395+09:00  INFO 25096 --- [gamemate] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:24:09.022+09:00  WARN 25096 --- [gamemate] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T14:24:09.191+09:00 DEBUG 25096 --- [gamemate] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2024-08-02T14:24:09.197+09:00 DEBUG 25096 --- [gamemate] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/] in 'viewControllerHandlerMapping'
+2024-08-02T14:24:09.236+09:00 DEBUG 25096 --- [gamemate] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T14:24:09.357+09:00 DEBUG 25096 --- [gamemate] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T14:24:09.387+09:00 DEBUG 25096 --- [gamemate] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T14:24:09.533+09:00  INFO 25096 --- [gamemate] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T14:24:09.566+09:00  INFO 25096 --- [gamemate] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T14:24:09.573+09:00  INFO 25096 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : Started GamemateApplication in 5.13 seconds (process running for 5.975)
+2024-08-02T14:52:30.151+09:00  INFO 25096 --- [gamemate] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:52:30.155+09:00  INFO 25096 --- [gamemate] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-02T14:52:30.170+09:00  INFO 25096 --- [gamemate] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-02T14:52:37.926+09:00  INFO 26092 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : Starting GamemateApplication using Java 17.0.10 with PID 26092 (C:\Users\user\gamemate\gamemate\build\classes\java\main started by user in C:\Users\user\gamemate\gamemate)
+2024-08-02T14:52:37.927+09:00 DEBUG 26092 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-02T14:52:37.928+09:00  INFO 26092 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T14:52:37.992+09:00  INFO 26092 --- [gamemate] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-02T14:52:37.992+09:00  INFO 26092 --- [gamemate] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-02T14:52:38.635+09:00  INFO 26092 --- [gamemate] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T14:52:38.750+09:00  INFO 26092 --- [gamemate] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 110 ms. Found 4 JPA repository interfaces.
+2024-08-02T14:52:39.231+09:00  INFO 26092 --- [gamemate] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T14:52:39.240+09:00  INFO 26092 --- [gamemate] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T14:52:39.240+09:00  INFO 26092 --- [gamemate] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T14:52:39.297+09:00  INFO 26092 --- [gamemate] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T14:52:39.298+09:00  INFO 26092 --- [gamemate] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1305 ms
+2024-08-02T14:52:39.451+09:00  INFO 26092 --- [gamemate] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T14:52:39.538+09:00  INFO 26092 --- [gamemate] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-02T14:52:39.591+09:00  INFO 26092 --- [gamemate] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T14:52:39.875+09:00  INFO 26092 --- [gamemate] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T14:52:39.901+09:00  INFO 26092 --- [gamemate] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-02T14:52:40.187+09:00  INFO 26092 --- [gamemate] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3e733f68
+2024-08-02T14:52:40.189+09:00  INFO 26092 --- [gamemate] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-02T14:52:40.237+09:00  WARN 26092 --- [gamemate] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T14:52:40.238+09:00  WARN 26092 --- [gamemate] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T14:52:41.184+09:00  INFO 26092 --- [gamemate] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T14:52:41.266+09:00  INFO 26092 --- [gamemate] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T14:52:41.761+09:00  WARN 26092 --- [gamemate] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T14:52:41.876+09:00 DEBUG 26092 --- [gamemate] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2024-08-02T14:52:41.881+09:00 DEBUG 26092 --- [gamemate] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/] in 'viewControllerHandlerMapping'
+2024-08-02T14:52:41.907+09:00 DEBUG 26092 --- [gamemate] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T14:52:42.002+09:00 DEBUG 26092 --- [gamemate] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T14:52:42.028+09:00 DEBUG 26092 --- [gamemate] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T14:52:42.133+09:00  INFO 26092 --- [gamemate] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T14:52:42.175+09:00  INFO 26092 --- [gamemate] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T14:52:42.181+09:00  INFO 26092 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : Started GamemateApplication in 4.646 seconds (process running for 5.24)
+2024-08-02T15:38:12.584+09:00  INFO 26092 --- [gamemate] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T15:38:12.593+09:00  INFO 26092 --- [gamemate] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-02T15:38:12.599+09:00  INFO 26092 --- [gamemate] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2024-08-02T15:41:31.316+09:00  INFO 10036 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : Starting GamemateApplication using Java 17.0.10 with PID 10036 (C:\Users\user\gamemate\gamemate\build\classes\java\main started by user in C:\Users\user\gamemate\gamemate)
+2024-08-02T15:41:31.318+09:00 DEBUG 10036 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : Running with Spring Boot v3.3.2, Spring v6.1.11
+2024-08-02T15:41:31.318+09:00  INFO 10036 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : No active profile set, falling back to 1 default profile: "default"
+2024-08-02T15:41:31.354+09:00  INFO 10036 --- [gamemate] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2024-08-02T15:41:31.354+09:00  INFO 10036 --- [gamemate] [restartedMain] .e.DevToolsPropertyDefaultsPostProcessor : For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2024-08-02T15:41:31.979+09:00  INFO 10036 --- [gamemate] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2024-08-02T15:41:32.096+09:00  INFO 10036 --- [gamemate] [restartedMain] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 111 ms. Found 4 JPA repository interfaces.
+2024-08-02T15:41:32.570+09:00  INFO 10036 --- [gamemate] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 8080 (http)
+2024-08-02T15:41:32.578+09:00  INFO 10036 --- [gamemate] [restartedMain] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2024-08-02T15:41:32.578+09:00  INFO 10036 --- [gamemate] [restartedMain] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.26]
+2024-08-02T15:41:32.620+09:00  INFO 10036 --- [gamemate] [restartedMain] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2024-08-02T15:41:32.621+09:00  INFO 10036 --- [gamemate] [restartedMain] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 1266 ms
+2024-08-02T15:41:32.745+09:00  INFO 10036 --- [gamemate] [restartedMain] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2024-08-02T15:41:32.788+09:00  INFO 10036 --- [gamemate] [restartedMain] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.5.2.Final
+2024-08-02T15:41:32.832+09:00  INFO 10036 --- [gamemate] [restartedMain] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2024-08-02T15:41:33.055+09:00  INFO 10036 --- [gamemate] [restartedMain] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2024-08-02T15:41:33.073+09:00  INFO 10036 --- [gamemate] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2024-08-02T15:41:33.291+09:00  INFO 10036 --- [gamemate] [restartedMain] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@3f0bdc8c
+2024-08-02T15:41:33.292+09:00  INFO 10036 --- [gamemate] [restartedMain] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2024-08-02T15:41:33.336+09:00  WARN 10036 --- [gamemate] [restartedMain] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2024-08-02T15:41:33.337+09:00  WARN 10036 --- [gamemate] [restartedMain] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2024-08-02T15:41:34.193+09:00  INFO 10036 --- [gamemate] [restartedMain] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2024-08-02T15:41:34.569+09:00  INFO 10036 --- [gamemate] [restartedMain] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T15:41:35.063+09:00  WARN 10036 --- [gamemate] [restartedMain] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2024-08-02T15:41:35.179+09:00 DEBUG 10036 --- [gamemate] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerMapping : 19 mappings in 'requestMappingHandlerMapping'
+2024-08-02T15:41:35.183+09:00 DEBUG 10036 --- [gamemate] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/] in 'viewControllerHandlerMapping'
+2024-08-02T15:41:35.211+09:00 DEBUG 10036 --- [gamemate] [restartedMain] o.s.w.s.handler.SimpleUrlHandlerMapping  : Patterns [/webjars/**, /**] in 'resourceHandlerMapping'
+2024-08-02T15:41:35.318+09:00 DEBUG 10036 --- [gamemate] [restartedMain] s.w.s.m.m.a.RequestMappingHandlerAdapter : ControllerAdvice beans: 0 @ModelAttribute, 0 @InitBinder, 1 RequestBodyAdvice, 1 ResponseBodyAdvice
+2024-08-02T15:41:35.345+09:00 DEBUG 10036 --- [gamemate] [restartedMain] .m.m.a.ExceptionHandlerExceptionResolver : ControllerAdvice beans: 0 @ExceptionHandler, 1 ResponseBodyAdvice
+2024-08-02T15:41:35.461+09:00  INFO 10036 --- [gamemate] [restartedMain] o.s.b.d.a.OptionalLiveReloadServer       : LiveReload server is running on port 35729
+2024-08-02T15:41:35.498+09:00  INFO 10036 --- [gamemate] [restartedMain] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 8080 (http) with context path '/'
+2024-08-02T15:41:35.505+09:00  INFO 10036 --- [gamemate] [restartedMain] c.example.gamemate.GamemateApplication   : Started GamemateApplication in 4.493 seconds (process running for 5.167)
+2024-08-02T15:42:29.656+09:00  INFO 10036 --- [gamemate] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2024-08-02T15:42:29.658+09:00  INFO 10036 --- [gamemate] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2024-08-02T15:42:29.665+09:00  INFO 10036 --- [gamemate] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.

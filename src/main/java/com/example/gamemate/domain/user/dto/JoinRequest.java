@@ -1,7 +1,7 @@
-package com.example.gamemate.user.dto;
+package com.example.gamemate.domain.user.dto;
 
-import com.example.gamemate.user.User;
-import com.example.gamemate.user.UserRole;
+import com.example.gamemate.domain.user.User;
+import com.example.gamemate.domain.user.UserRole;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 import lombok.NoArgsConstructor;

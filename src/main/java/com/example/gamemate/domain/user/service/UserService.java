@@ -1,9 +1,9 @@
-package com.example.gamemate.user.service;
+package com.example.gamemate.domain.user.service;
 
-import com.example.gamemate.user.User;
-import com.example.gamemate.user.dto.JoinRequest;
-import com.example.gamemate.user.dto.LoginRequest;
-import com.example.gamemate.user.repository.UserRepository;
+import com.example.gamemate.domain.user.User;
+import com.example.gamemate.domain.user.dto.JoinRequest;
+import com.example.gamemate.domain.user.dto.LoginRequest;
+import com.example.gamemate.domain.user.repository.UserRepository;
 import java.util.Optional;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;

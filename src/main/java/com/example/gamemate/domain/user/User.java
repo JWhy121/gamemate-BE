@@ -1,6 +1,6 @@
-package com.example.gamemate.user;
+package com.example.gamemate.domain.user;
 
-import com.example.gamemate.audit.BaseEntity;
+import com.example.gamemate.global.audit.BaseEntity;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;

@@ -1,8 +1,8 @@
-package com.example.gamemate.game;
-import com.example.gamemate.user.User;
-import jakarta.persistence.*;
+package com.example.gamemate.domain.game.entity;
 
-import jakarta.persistence.Entity;
+import com.example.gamemate.domain.user.User;
+import com.example.gamemate.global.audit.BaseEntity;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Table(name = "game_rating")
@@ -12,7 +12,7 @@ import lombok.*;
 @Setter
 @Builder
 @Entity
-public class GameRating {
+public class GameRating extends BaseEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
@@ -28,12 +28,11 @@ public class GameRating {
     @Column(nullable = false)
     private int rating;
 
-    //rating은 1~10의 int -> 프론트에서는 1~5 사이의 값으로 나타나도록 나누기 2
+    // rating은 1~10의 int -> 프론트에서는 1~5 사이의 값으로 나타나도록 나누기 2
     public void setRating(int rating) {
         if (rating < 1 || rating > 10) {
             throw new IllegalArgumentException("평점은 1에서 10 사이의 정수여야 합니다.");
         }
         this.rating = rating;
     }
-
 }
