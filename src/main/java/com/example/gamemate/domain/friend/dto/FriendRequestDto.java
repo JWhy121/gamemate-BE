@@ -1,6 +1,6 @@
 package com.example.gamemate.domain.friend.dto;
 
-import com.example.gamemate.domain.friend.entity.Friend.Status;
+import com.example.gamemate.domain.friend.entity.Friend;
 import com.example.gamemate.domain.user.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -14,8 +14,11 @@ import lombok.Setter;
 public class FriendRequestDto {
 
     private String message;
-    private Status status;
+    private Friend.Status status;
     private User requester;
     private User receiver;
-}
 
+    public FriendRequestDto(String message) {
+        this.message = message;
+    }
+}

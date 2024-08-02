@@ -1,6 +1,6 @@
 package com.example.gamemate.domain.friend.dto;
 
-import com.example.gamemate.domain.friend.entity.Friend.Status;
+import com.example.gamemate.domain.friend.entity.Friend;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -19,7 +19,8 @@ public class FriendPutDto {
     @Schema(description = "친구 요청을 받은 사용자 ID", example = "2")
     private Long receiverId;
 
-    @Schema(description = "친구 요청의 새로운 상태", example = "ACCEPTED")
-    private Status status;
+    @Schema(description = "친구 요청 상태", example = "ACCEPTED or REJECTED")
+    private Friend.Status status;
 }
+
 

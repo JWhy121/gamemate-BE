@@ -68,7 +68,7 @@ public class SecurityConfig {
 
             //경로별 인가 작업
             .authorizeHttpRequests((auth) -> auth
-                .requestMatchers("/login", "/", "/join").permitAll()
+                .requestMatchers("/login", "/", "/join","/friend/**").permitAll()
                 .requestMatchers("/swagger-ui/**", "/v3/api-docs/**", "/swagger-resources/**", "/swagger-ui.html", "/webjars/**").permitAll() // Swagger 경로 허용
                 .anyRequest().authenticated())
 
@@ -109,18 +109,6 @@ public class SecurityConfig {
 
         return http.build();
 
-    }
-
-    @Bean
-    public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http
-                .csrf(csrf -> csrf.disable()) // CSRF 보호 비활성화
-                .authorizeHttpRequests(authorize -> authorize
-                        .requestMatchers("/friend/**").permitAll() // /friend/** 경로에 대한 접근 허용
-                        .anyRequest().authenticated() // 다른 모든 요청은 인증 필요
-                )
-                .httpBasic(Customizer.withDefaults()); // 기본 인증 방식 사용
-        return http.build();
     }
 }
 
