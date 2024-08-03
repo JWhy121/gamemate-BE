@@ -14,6 +14,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.objenesis.ObjenesisHelper;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -69,6 +70,15 @@ public class PostController {
     public ResponseEntity<Object> editPost(@PathVariable Long id, @Valid @RequestBody PostUpdateDTO postUpdateDTO){
 
         postService.updatePost(id, postUpdateDTO);
+
+        return ResponseEntity.ok().build();
+    }
+
+    //글 삭제 api
+    @DeleteMapping("post/{id}")
+    public ResponseEntity<Object> removePost(@PathVariable Long id){
+
+        postService.deletePost(id);
 
         return ResponseEntity.ok().build();
     }

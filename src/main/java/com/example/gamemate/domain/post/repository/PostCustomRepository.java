@@ -7,7 +7,6 @@ import java.util.List;
 
 public interface PostCustomRepository {
 
-    List<Post> findBusanTest();
-
+    void hardDeleteComments(Long id);
 
 }

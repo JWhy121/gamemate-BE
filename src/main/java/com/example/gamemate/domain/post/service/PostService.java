@@ -41,13 +41,6 @@ public class PostService {
         return postPage.map(PostResponseDTO::new);
     }
 
-//    //게시글 조회
-//    public PostResponseDTO readPost(Long id){
-//        return postRepository.findById(id)
-//                .map(PostResponseDTO::new)
-//                .orElseThrow(() -> new RestApiException(PostErrorCode.POST_NOT_FOUND));
-//    }
-
     //게시글 조회
     public PostResponseDTO readPost(Long id){
 
@@ -140,6 +133,12 @@ public class PostService {
                     .orElseThrow(() -> new IllegalStateException("Post with id " + id + "does note exist"));
         }
         else throw new IllegalArgumentException("잘못된 접근");
+    }
+
+    //게시글 삭제
+    public void deletePost(Long id){
+        postRepository.hardDeleteComments(id);
+        postRepository.deleteById(id);
     }
 
 

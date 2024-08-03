@@ -57,20 +57,13 @@ public class PostCommentCustomRepositoryImpl implements PostCommentCustomReposit
         //부모 댓글의 deletedDate가 null인지 확인
         if(commentId != null){
 
-            try{
-                LocalDateTime deletedDate = jpaQueryFactory
-                        .select(postComment.deletedDate)
-                        .from(postComment)
-                        .where(postComment.id.eq(commentId))
-                        .fetchOne();
+            LocalDateTime deletedDate = jpaQueryFactory
+                    .select(postComment.deletedDate)
+                    .from(postComment)
+                    .where(postComment.id.eq(commentId))
+                    .fetchOne();
 
-                return deletedDate != null;
-            }
-         catch (Exception e) {
-            // 로그를 통해 오류 확인
-            System.err.println("Error fetching deletedDate: " + e.getMessage());
-            return false;
-            }
+            return deletedDate != null;
         }
         return false;
     }

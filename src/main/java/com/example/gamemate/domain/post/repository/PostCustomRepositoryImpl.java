@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 import static com.example.gamemate.domain.post.entity.QPost.post;
+import static com.example.gamemate.domain.post.entity.QPostComment.postComment;
 
 
 @Repository
@@ -18,9 +19,14 @@ public class PostCustomRepositoryImpl implements PostCustomRepository {
     }
 
     @Override
-    public List<Post> findBusanTest() {
-        return jpaQueryFactory.selectFrom(post)
-                .where(post.mateRegionSi.startsWith("부산"))
-                .fetch();
+    public void hardDeleteComments(Long id) {
+
+        //
+
+        jpaQueryFactory
+                .delete(postComment)
+                .where(postComment.post.id.eq(id)
+                        .and(postComment.deletedDate.isNotNull()))
+                .execute();
     }
 }
