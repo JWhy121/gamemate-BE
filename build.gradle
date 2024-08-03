@@ -51,6 +51,8 @@ dependencies {
 
 	//Devtools setting
 	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+	// Validation
+	implementation 'org.springframework.boot:spring-boot-starter-validation'
 
 	//QueryDsl
 	implementation 'com.querydsl:querydsl-jpa:5.0.0:jakarta'
@@ -80,6 +82,22 @@ dependencies {
     //스프링독
     implementation 'org.springdoc:springdoc-openapi-starter-webmvc-ui:2.0.2'
 
+	// OAuth 2.0 Login
+	implementation 'org.springframework.boot:spring-boot-starter-oauth2-client'
+
+	// WebFlux for non-blocking API calls
+	implementation 'org.springframework.boot:spring-boot-starter-webflux'
+
+	// Jackson XML for parsing XML responses
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.15.2'
+	// JSON to XML
+	implementation 'org.json:json:20210307'
+	implementation 'com.fasterxml.jackson.core:jackson-databind'
+
+
+	// MapStruct
+	implementation 'org.mapstruct:mapstruct:1.5.3.Final'
+	annotationProcessor 'org.mapstruct:mapstruct-processor:1.5.3.Final'
 }
 
 tasks.named('test') {
