@@ -21,10 +21,8 @@ public class GameService {
 
     private static final Logger logger = LoggerFactory.getLogger(GameService.class);
 
-    @Autowired
     private GameApiClient gameApiClient;
-
-    @Autowired
+    //생성자 주입 (순환참조 걸릴 수 있음)
     private GameRepository gameRepository;
 
     @Autowired
@@ -57,7 +55,7 @@ public class GameService {
                                 .platform(item.getPlatform())
                                 .build();
 
-                        // 데이터베이스에 저장
+                        // 데이터베이스에 저장    리스트 형태로 가지고있다가 벌크 인설트 하는 게 좋ㅇㅁ
                         gameRepository.save(game);
                         logger.debug("Game saved: {}", game);
                     }

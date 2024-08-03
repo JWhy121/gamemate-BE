@@ -15,7 +15,7 @@ public class GameListController {
     @Autowired
     private GameListService gameListService;
 
-    //마이페이지
+    //마이페이지 Pathvariable 그냥 빼면됨 여기는
     @GetMapping
     public List<GameListDto> getUserGameList(@PathVariable Long userId) {
         return gameListService.getGameListByUserId(userId);

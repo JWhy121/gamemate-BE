@@ -12,3 +12,4 @@ public interface GameRepository extends JpaRepository<Game, Long> {
     List<Game> findAllByDeletedDateIsNull();
     Optional<Game> findByIdAndDeletedDateIsNull(Long id);
 }
+//페이지네이션 적용 autowired 적용

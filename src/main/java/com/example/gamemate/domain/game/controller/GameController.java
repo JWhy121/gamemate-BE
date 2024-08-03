@@ -32,7 +32,7 @@ public class GameController {
         return gameApiClient.fetchGames(gametitle, entname, rateno, startdate, enddate, display, pageno);
     }
 
-    @GetMapping("/fetch-games")
+    @GetMapping("/fetch-games") //dto 만들어서 걔만 받아주면 됨
     public String fetchAndSaveGames(
             @RequestParam(required = false) String gametitle,
             @RequestParam(required = false) String entname,
