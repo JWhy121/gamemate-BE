@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class OutputMessageModel {
 
+    // 스톰프 프레임에 맞게 변경.
+
     private Long id;
     private String writer;
     private Long chatRoomId;

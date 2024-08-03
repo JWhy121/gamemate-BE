@@ -1,11 +1,11 @@
-package com.example.gamemate.domain.chat.converter;
+package com.example.gamemate.domain.chat.mapper;
 
 import com.example.gamemate.domain.chat.domain.ChatRoom;
-import com.example.gamemate.domain.chat.dto.chatroom.ChatRoomDTO;
+import com.example.gamemate.domain.chat.dto.ChatRoomDTO;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ChatRoomConverter {
+public class ChatRoomMapper {
     public ChatRoomDTO convertoToChatRoomDTO(ChatRoom chatRoom){
         return new ChatRoomDTO(chatRoom.getId(),chatRoom.getTitle(), chatRoom.getLeader());
     }

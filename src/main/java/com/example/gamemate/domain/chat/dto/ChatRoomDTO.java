@@ -1,4 +1,4 @@
-package com.example.gamemate.domain.chat.dto.chatroom;
+package com.example.gamemate.domain.chat.dto;
 
 import lombok.Getter;
 

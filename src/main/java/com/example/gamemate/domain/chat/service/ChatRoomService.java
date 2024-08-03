@@ -1,9 +1,9 @@
 package com.example.gamemate.domain.chat.service;
 
 
-import com.example.gamemate.domain.chat.converter.ChatRoomConverter;
+import com.example.gamemate.domain.chat.mapper.ChatRoomMapper;
 import com.example.gamemate.domain.chat.domain.ChatRoom;
-import com.example.gamemate.domain.chat.dto.chatroom.ChatRoomDTO;
+import com.example.gamemate.domain.chat.dto.ChatRoomDTO;
 import com.example.gamemate.domain.chat.model.chatroom.ChatRoomCreateResponse;
 import com.example.gamemate.domain.chat.repository.ChatRoomRepository;
 import lombok.RequiredArgsConstructor;
@@ -18,7 +18,7 @@ public class ChatRoomService {
 
     private final ChatRoomRepository chatRoomRepository;
     private final ChatRoomMemberService chatRoomMemberService;
-    private final ChatRoomConverter chatRoomConverter;
+    private final ChatRoomMapper chatRoomMapper;
 
     public ChatRoomCreateResponse createChatRoom(String chatTitle, String leader){
 
@@ -36,7 +36,7 @@ public class ChatRoomService {
     public List<ChatRoomDTO> getAllChatRooms() {
         List<ChatRoom> chatRooms = chatRoomRepository.findAll();
         return chatRooms.stream()
-                .map(chatRoomConverter::convertoToChatRoomDTO)
+                .map(chatRoomMapper::convertoToChatRoomDTO)
                 .collect(Collectors.toList());
     }
 

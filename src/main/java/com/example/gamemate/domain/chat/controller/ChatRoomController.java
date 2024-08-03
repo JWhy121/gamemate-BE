@@ -1,6 +1,6 @@
 package com.example.gamemate.domain.chat.controller;
 
-import com.example.gamemate.domain.chat.dto.chatroom.ChatRoomDTO;
+import com.example.gamemate.domain.chat.dto.ChatRoomDTO;
 import com.example.gamemate.domain.chat.model.chatroom.ChatRoomCreateRequest;
 import com.example.gamemate.domain.chat.model.chatroom.ChatRoomCreateResponse;
 import com.example.gamemate.domain.chat.service.ChatRoomService;
