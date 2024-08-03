@@ -63,7 +63,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
             response.setStatus(HttpStatus.NOT_FOUND.value());
             response.setContentType(MediaType.APPLICATION_JSON_VALUE);
             try {
-                om.writeValue(response.getOutputStream(), new ExceptionDTO("USER_NOT_FOUND", "존재하지 않는 계정입니다. 새로운 계정을 만들어주세요."));
+                om.writeValue(response.getOutputStream(), new ExceptionDTO("USER_NOT_FOUND", "존재하지 않는 계정"));
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
@@ -73,7 +73,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
             response.setStatus(HttpStatus.UNAUTHORIZED.value());
             response.setContentType(MediaType.APPLICATION_JSON_VALUE);
             try {
-                om.writeValue(response.getOutputStream(), new ExceptionDTO("INVALID_PASSWORD", "비밀번호가 틀립니다. 다시 확인해주세요."));
+                om.writeValue(response.getOutputStream(), new ExceptionDTO("INVALID_PASSWORD", "비밀번호 오류"));
             } catch (IOException ex){
                 ex.printStackTrace();
             }
@@ -83,7 +83,7 @@ public class LoginFilter extends UsernamePasswordAuthenticationFilter {
             response.setStatus(HttpStatus.FORBIDDEN.value());
             response.setContentType(MediaType.APPLICATION_JSON_VALUE);
             try {
-                om.writeValue(response.getOutputStream(), new ExceptionDTO("ACCOUNT_DISABLED", "삭제된 계정입니다. 다시 확인해주세요."));
+                om.writeValue(response.getOutputStream(), new ExceptionDTO("ACCOUNT_DISABLED", "삭제된 계정"));
             } catch (IOException ex) {
                 ex.printStackTrace();
             }
