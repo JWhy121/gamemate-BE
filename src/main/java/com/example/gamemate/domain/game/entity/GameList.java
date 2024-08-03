@@ -1,5 +1,5 @@
 package com.example.gamemate.domain.game.entity;
-import com.example.gamemate.domain.user.User;
+import com.example.gamemate.domain.user.entity.User;
 import com.example.gamemate.global.audit.BaseEntity;
 import jakarta.persistence.*;
 import lombok.*;
