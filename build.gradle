@@ -40,7 +40,7 @@ dependencies {
 
 
 	//database setting
-	runtimeOnly 'com.mysql:mysql-connector-j'
+	implementation 'mysql:mysql-connector-java:8.0.29'
 
 
     //swagger setting
@@ -88,8 +88,4 @@ dependencies {
 
 
 
-}
-
-tasks.named('test') {
-	useJUnitPlatform()
 }
