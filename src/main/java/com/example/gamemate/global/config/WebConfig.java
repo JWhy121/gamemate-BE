@@ -9,11 +9,11 @@ public class WebConfig implements WebMvcConfigurer {
     @Override
     public void addCorsMappings(CorsRegistry registry) {
         registry.addMapping("/**")
-                .allowedOrigins("http://localhost:3000")
-                //.allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                .allowedMethods("*")
-                .allowedHeaders("*")
-                .exposedHeaders("Set-Cookie")
+                .allowedOrigins("http://ec2-3-82-142-19.compute-1.amazonaws.com")
+                .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
+//                .allowedMethods("*")
+                .allowedHeaders("Content-Type", "Authorization", "Accept", "X-Requested-With")
+                .exposedHeaders("Set-Cookie","Authorization")
                 .allowCredentials(true);
     }
 }
