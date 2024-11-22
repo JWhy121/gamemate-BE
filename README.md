@@ -187,7 +187,6 @@ http://ec2-54-82-46-230.compute-1.amazonaws.com:8080/swagger-ui/index.html
 ### 역할 분담
 
 | | 이름  |  
-|--|--|
 | ![img.png](images/img.png) | 박원정  |
 |![img_1.png](images/img_1.png) | 고의성  |
 |![img_2.png](images/img_2.png) | 김경래  |
