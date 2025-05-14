@@ -31,6 +31,4 @@ public class ChatRoomMemberController {
         //return ApiResponse.successRes(HttpStatus.OK,roomId);
         return ResponseEntity.ok(roomId);
     }
-
-
 }

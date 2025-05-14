@@ -88,16 +88,9 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
 
-        //csrf disable
         http.csrf(AbstractHttpConfigurer::disable)
-
-            //Form 로그인 방식 disable
             .formLogin(AbstractHttpConfigurer::disable)
-
-            //http basic 인증 방식 disable
             .httpBasic(AbstractHttpConfigurer::disable)
-
-            //경로별 인가 작업
             .authorizeHttpRequests((auth) -> auth
                 .requestMatchers("/login", "/", "/join","/friend/**", "/games/**").permitAll()
                     .requestMatchers("/posts/**","/post/**").hasRole("USER")
