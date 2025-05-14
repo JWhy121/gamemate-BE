@@ -42,35 +42,35 @@ public class MessageController {
     private final MessageService messageService;
     private final UserService userService;
 
-    @MessageMapping("/message/send/{roomId}") // "/app/message/send/"+roomId 클라이언트쪽에서 메시지를 보내오는 경로
-    @SendTo("/topic/chat/{roomId}") // 특정 목적지를 설정. 메시지브로커는 이 경로에 해당하는 응답채널을 통해서 구독자에게 메시지를 전달할 수 있게 된다.
-    public OutputMessageModel sendMessage(@Payload MessageModel messageModel,
-                                          @DestinationVariable String roomId
-                                          //,@AuthenticationPrincipal UserDetails userDetails //이걸 사용하면 메시지가 이 메소드에 못들어옴.
-                                          , SimpMessageHeaderAccessor headerAccessor
-
-    ) { // chatUuid 이 경로로부터 데이터를 추출할 수 있음. 그러기 위해서 @DestinationVariable 사용
-        final String time = new SimpleDateFormat("HH:mm").format(new Date());
-
-        Authentication auth = (Authentication) headerAccessor.getUser();
-        //  인증 과정에서 username만 사용하여 principal이 String으로 반환됨.
-        //UserDetails userDetails = (UserDetails) auth.getPrincipal();
-        String username = (String)auth.getPrincipal();
-
-        MyPageResponseDTO user = userService.findByUsernameForMyPage(username);
-
-        Message newMessage =messageService.saveMessage(messageModel.getChatRoomId(),
-                messageModel.getContent(), username, time, messageModel.getType() );
-
-        return new OutputMessageModel(newMessage.getId(),
-                user.getNickname(),
-                messageModel.getChatRoomId(),
-                messageModel.getContent(),
-                time,
-                messageModel.getType(),newMessage.getWriter().getId(), newMessage.getWriter().getUserProfile());
-
-    }
-    // MessageMapping의 경로로 클라이언트가 메시지를 보내오면 sendframe에 담사어 전송함.
+//    @MessageMapping("/message/send/{roomId}") // "/app/message/send/"+roomId 클라이언트쪽에서 메시지를 보내오는 경로
+//    @SendTo("/topic/chat/{roomId}") // 특정 목적지를 설정. 메시지브로커는 이 경로에 해당하는 응답채널을 통해서 구독자에게 메시지를 전달할 수 있게 된다.
+//    public OutputMessageModel sendMessage(@Payload MessageModel messageModel,
+//                                          @DestinationVariable String roomId
+//                                          //,@AuthenticationPrincipal UserDetails userDetails //이걸 사용하면 메시지가 이 메소드에 못들어옴.
+//                                          , SimpMessageHeaderAccessor headerAccessor
+//
+//    ) { // chatUuid 이 경로로부터 데이터를 추출할 수 있음. 그러기 위해서 @DestinationVariable 사용
+//        final String time = new SimpleDateFormat("HH:mm").format(new Date());
+//
+//        Authentication auth = (Authentication) headerAccessor.getUser();
+//        //  인증 과정에서 username만 사용하여 principal이 String으로 반환됨.
+//        //UserDetails userDetails = (UserDetails) auth.getPrincipal();
+//        String username = (String)auth.getPrincipal();
+//
+//        MyPageResponseDTO user = userService.findByUsernameForMyPage(username);
+//
+//        Message newMessage =messageService.saveMessage(messageModel.getChatRoomId(),
+//                messageModel.getContent(), username, time, messageModel.getType() );
+//
+//        return new OutputMessageModel(newMessage.getId(),
+//                user.getNickname(),
+//                messageModel.getChatRoomId(),
+//                messageModel.getContent(),
+//                time,
+//                messageModel.getType(),newMessage.getWriter().getId(), newMessage.getWriter().getUserProfile());
+//
+//    }
+    // MessageMapping의 경로로 클라이언트가 메시지를 보내오면 sendframe에 담아 전송함.
 //    위 메소드로 그 메시지를 가공해서 리턴하면 응답채널을 통해서 메시지브로커가 받음
     // 그 메시지 브로커는  그 경로를 인지한다음에 클라이언트에게 보내준다.
 
